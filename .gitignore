@@ -2,5 +2,12 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .venv/
-k8s/rendered/
-.last-tag
+rendered.yaml
+
+# Terraform: downloaded providers, local state and plans are never
+# committed. The lock files (.terraform.lock.hcl) are committed.
+.terraform/
+*.tfstate
+*.tfstate.*
+tfplan
+*.tfvars
