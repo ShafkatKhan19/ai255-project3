@@ -1,0 +1,10 @@
+Is the environment parked?	success	2026-11-24T12:01:36Z	2026-11-24T12:01:57Z
+checks / Kubernetes manifests	success	2026-11-24T12:01:36Z	2026-11-24T12:01:43Z
+checks / Unit tests (37, no cloud)	success	2026-11-24T12:01:36Z	2026-11-24T12:02:08Z
+checks / Build the images and test them together	success	2026-11-24T12:01:36Z	2026-11-24T12:02:26Z
+checks / Terraform format, validate, plan tests	success	2026-11-24T12:01:35Z	2026-11-24T12:01:47Z
+Infrastructure (terraform apply)	success	2026-11-24T12:02:28Z	2026-11-24T12:10:24Z
+Image (links)	success	2026-11-24T12:10:27Z	2026-11-24T12:11:08Z
+Image (web)	success	2026-11-24T12:10:27Z	2026-11-24T12:11:00Z
+Image (stats)	success	2026-11-24T12:10:27Z	2026-11-24T12:11:05Z
+Roll out and test the live site	success	2026-11-24T12:11:11Z	2026-11-24T12:16:17Z

@@ -1,0 +1,1163 @@
+Tear everything down	Set up job	n++2026-11-24T11:49:56.9302118Z Current runner version: '2.338.2'
+Tear everything down	Set up job	2026-11-24T11:49:56.9320867Z ##[group]Runner Image Provisioner
+Tear everything down	Set up job	2026-11-24T11:49:56.9321597Z Hosted Compute Agent
+Tear everything down	Set up job	2026-11-24T11:49:56.9322011Z Version: 20261111.635
+Tear everything down	Set up job	2026-11-24T11:49:56.9322461Z Commit: b8a594ea514ff44cadb5342986c68b1eac6e22ed
+Tear everything down	Set up job	2026-11-24T11:49:56.9323272Z Build Date: 2026-11-11T01:49:01Z
+Tear everything down	Set up job	2026-11-24T11:49:56.9323853Z Worker ID: {af547064-8385-417e-bf91-e0b97dae6b51}
+Tear everything down	Set up job	2026-11-24T11:49:56.9324384Z Region: us-west-2
+Tear everything down	Set up job	2026-11-24T11:49:56.9324777Z Cloud: AWS
+Tear everything down	Set up job	2026-11-24T11:49:56.9325156Z ##[endgroup]
+Tear everything down	Set up job	2026-11-24T11:49:56.9326177Z ##[group]Operating System
+Tear everything down	Set up job	2026-11-24T11:49:56.9326615Z Ubuntu
+Tear everything down	Set up job	2026-11-24T11:49:56.9327000Z 26.04.1
+Tear everything down	Set up job	2026-11-24T11:49:56.9327360Z LTS
+Tear everything down	Set up job	2026-11-24T11:49:56.9327713Z ##[endgroup]
+Tear everything down	Set up job	2026-11-24T11:49:56.9328122Z ##[group]Runner Image
+Tear everything down	Set up job	2026-11-24T11:49:56.9328586Z Image: ubuntu-26.04
+Tear everything down	Set up job	2026-11-24T11:49:56.9329047Z Version: 20261116.88.1
+Tear everything down	Set up job	2026-11-24T11:49:56.9329797Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261116.88/images/ubuntu/Ubuntu2604-Readme.md
+Tear everything down	Set up job	2026-11-24T11:49:56.9331061Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261116.88
+Tear everything down	Set up job	2026-11-24T11:49:56.9331761Z ##[endgroup]
+Tear everything down	Set up job	2026-11-24T11:49:56.9332968Z ##[group]GITHUB_TOKEN Permissions
+Tear everything down	Set up job	2026-11-24T11:49:56.9334780Z Contents: read
+Tear everything down	Set up job	2026-11-24T11:49:56.9335221Z Metadata: read
+Tear everything down	Set up job	2026-11-24T11:49:56.9335619Z ##[endgroup]
+Tear everything down	Set up job	2026-11-24T11:49:56.9337097Z Secret source: Actions
+Tear everything down	Set up job	2026-11-24T11:49:56.9337786Z Cache mode: write
+Tear everything down	Set up job	2026-11-24T11:49:56.9338252Z Prepare workflow directory
+Tear everything down	Set up job	2026-11-24T11:49:56.9679648Z Prepare all required actions
+Tear everything down	Set up job	2026-11-24T11:49:56.9715817Z Getting action download info
+Tear everything down	Set up job	2026-11-24T11:49:57.3686492Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Tear everything down	Set up job	2026-11-24T11:49:59.0405913Z Download action repository 'google-github-actions/auth@v2' (SHA:c200f3691d83b41bf9bbd8638997a462592937ed)
+Tear everything down	Set up job	2026-11-24T11:49:59.3643590Z Download action repository 'google-github-actions/setup-gcloud@v2' (SHA:e427ad8a34f8676edf47cf7d7925499adf3eb74f)
+Tear everything down	Set up job	2026-11-24T11:49:59.6187498Z Download action repository 'hashicorp/setup-terraform@v3' (SHA:b9cd54a3c349d3f38e8881555d616ced269862dd)
+Tear everything down	Set up job	2026-11-24T11:50:00.0095572Z Complete job name: Tear everything down
+Tear everything down	Run actions/checkout@v4	n++2026-11-24T11:50:00.0622195Z ##[group]Run actions/checkout@v4
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0622923Z with:
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0623280Z   repository: ShafkatKhan19/ai255-project3
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0625362Z   token: ***
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0625608Z   ssh-strict: true
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0625882Z   ssh-user: git
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0626108Z   persist-credentials: true
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0626364Z   clean: true
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0626589Z   sparse-checkout-cone-mode: true
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0626859Z   fetch-depth: 1
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0627091Z   fetch-tags: false
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0627321Z   show-progress: true
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0627573Z   lfs: false
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0627782Z   submodules: false
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0628004Z   set-safe-directory: true
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0628290Z   allow-unsafe-pr-checkout: false
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0628702Z env:
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0628924Z   TF_VAR_project_id: ai255-p1-shafkat
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0629189Z   TF_VAR_region: us-central1
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0629441Z   TF_VAR_dns_zone: web-zone
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0629789Z   TF_VAR_domain: snip.cloud.gadgetgroveny.com
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0630066Z   TF_IN_AUTOMATION: true
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:00.0630302Z ##[endgroup]
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3186363Z Syncing repository: ShafkatKhan19/ai255-project3
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3188254Z ##[group]Getting Git version info
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3188848Z Working directory is '/home/runner/work/ai255-project3/ai255-project3'
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3189773Z [command]/usr/bin/git version
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3194191Z git version 2.56.1
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3206453Z ##[endgroup]
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3216336Z Temporarily overriding HOME='/home/runner/work/_temp/7fd5a64a-ef3f-43c7-8c9a-cbcd931993af' before making global git config changes
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3217453Z Adding repository directory to the temporary git global config as a safe directory
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3219793Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ai255-project3/ai255-project3
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3558602Z Deleting the contents of '/home/runner/work/ai255-project3/ai255-project3'
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3560410Z ##[group]Initializing the repository
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.3563551Z [command]/usr/bin/git init /home/runner/work/ai255-project3/ai255-project3
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4435411Z hint: Using 'master' as the name for the initial branch. This default branch name
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4436171Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4436679Z hint: to use in all of your new repositories, which will suppress this warning,
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4437123Z hint: call:
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4437378Z hint:
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4437685Z hint: 	git config --global init.defaultBranch <name>
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4438024Z hint:
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4438342Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4438800Z hint: 'development'. The just-created branch can be renamed via this command:
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4439150Z hint:
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4439372Z hint: 	git branch -m <name>
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4439615Z hint:
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4439985Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4458319Z Initialized empty Git repository in /home/runner/work/ai255-project3/ai255-project3/.git/
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4465429Z [command]/usr/bin/git remote add origin https://github.com/ShafkatKhan19/ai255-project3
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4522502Z ##[endgroup]
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4523124Z ##[group]Disabling automatic garbage collection
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4524898Z [command]/usr/bin/git config --local gc.auto 0
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4545602Z ##[endgroup]
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4546186Z ##[group]Setting up auth
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4550330Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.4571809Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.8946809Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.8971664Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.9148204Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.9171565Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.9341822Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.9366899Z ##[endgroup]
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.9367417Z ##[group]Fetching the repository
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:04.9373094Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b065cc1a1a0db207833dfec4635ff28afaa841f6:refs/remotes/origin/main
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4476372Z From https://github.com/ShafkatKhan19/ai255-project3
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4476976Z  * [new ref]         b065cc1a1a0db207833dfec4635ff28afaa841f6 -> origin/main
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4478837Z ##[endgroup]
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4479367Z ##[group]Determining the checkout info
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4480692Z ##[endgroup]
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4485170Z [command]/usr/bin/git sparse-checkout disable
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4564116Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4565723Z ##[group]Checking out the ref
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4566325Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4679189Z Switched to a new branch 'main'
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4687776Z branch 'main' set up to track 'origin/main'.
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4691652Z ##[endgroup]
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4728416Z [command]/usr/bin/git log -1 --format=%H
+Tear everything down	Run actions/checkout@v4	2026-11-24T11:50:05.4744071Z b065cc1a1a0db207833dfec4635ff28afaa841f6
+Tear everything down	Run google-github-actions/auth@v2	n++2026-11-24T11:50:05.4943282Z ##[group]Run google-github-actions/auth@v2
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4943613Z with:
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4944017Z   workload_identity_provider: projects/152066773754/locations/global/workloadIdentityPools/github/providers/github
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4944555Z   service_account: snip-deployer@ai255-p1-shafkat.iam.gserviceaccount.com
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4944906Z   create_credentials_file: true
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4945189Z   export_environment_variables: true
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4945474Z   universe: googleapis.com
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4945828Z   cleanup_credentials: true
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4946112Z   access_token_lifetime: 3600s
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4946431Z   access_token_scopes: https://www.googleapis.com/auth/cloud-platform
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4946780Z   id_token_include_email: false
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4947038Z env:
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4947243Z   TF_VAR_project_id: ai255-p1-shafkat
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4947499Z   TF_VAR_region: us-central1
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4947764Z   TF_VAR_dns_zone: web-zone
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4948072Z   TF_VAR_domain: snip.cloud.gadgetgroveny.com
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4948392Z   TF_IN_AUTOMATION: true
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:05.4948601Z ##[endgroup]
+Tear everything down	Run google-github-actions/auth@v2	2026-11-24T11:50:06.0006176Z Created credentials file at "/home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json"
+Tear everything down	Run google-github-actions/setup-gcloud@v2	n++2026-11-24T11:50:06.0836143Z ##[group]Run google-github-actions/setup-gcloud@v2
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0836487Z with:
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0836723Z   install_components: gke-gcloud-auth-plugin
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0836990Z   version: latest
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0837222Z   skip_install: false
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0837446Z   skip_tool_cache: false
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0837697Z env:
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0837911Z   TF_VAR_project_id: ai255-p1-shafkat
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0838189Z   TF_VAR_region: us-central1
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0838445Z   TF_VAR_dns_zone: web-zone
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0838718Z   TF_VAR_domain: snip.cloud.gadgetgroveny.com
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0839010Z   TF_IN_AUTOMATION: true
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0839430Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0840179Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0840792Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0841297Z   CLOUDSDK_CORE_PROJECT: ai255-p1-shafkat
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0841604Z   CLOUDSDK_PROJECT: ai255-p1-shafkat
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0841844Z   GCLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0842151Z   GCP_PROJECT: ai255-p1-shafkat
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0842397Z   GOOGLE_CLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.0842815Z ##[endgroup]
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:06.8169115Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/b2842dc0-24cb-4130-91fc-e402af1ab918 -f /home/runner/work/_temp/65b85c7b-601c-4e88-9552-591b9cf21d10
+Tear everything down	Run google-github-actions/setup-gcloud@v2	2026-11-24T11:50:26.8330160Z Successfully authenticated
+Tear everything down	Run hashicorp/setup-terraform@v3	n++2026-11-24T11:50:26.8494773Z ##[group]Run hashicorp/setup-terraform@v3
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8495079Z with:
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8495328Z   terraform_version: 1.16.6
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8495578Z   terraform_wrapper: false
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8495838Z   cli_config_credentials_hostname: app.terraform.io
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8496096Z env:
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8496376Z   TF_VAR_project_id: ai255-p1-shafkat
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8496628Z   TF_VAR_region: us-central1
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8496877Z   TF_VAR_dns_zone: web-zone
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8497133Z   TF_VAR_domain: snip.cloud.gadgetgroveny.com
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8497429Z   TF_IN_AUTOMATION: true
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8497892Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8498616Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8499206Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8499775Z   CLOUDSDK_CORE_PROJECT: ai255-p1-shafkat
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8500083Z   CLOUDSDK_PROJECT: ai255-p1-shafkat
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8500339Z   GCLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8500591Z   GCP_PROJECT: ai255-p1-shafkat
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8500853Z   GOOGLE_CLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8501178Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8501537Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.8501792Z ##[endgroup]
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.9554728Z (node:2448) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:26.9555655Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Tear everything down	Run hashicorp/setup-terraform@v3	2026-11-24T11:50:27.2799864Z [command]/usr/bin/unzip -o -q /home/runner/work/_temp/657a3810-fa30-4858-bb51-931262a6d693
+Tear everything down	Park the environment (commits will not rebuild it)	n++2026-11-24T11:50:28.0074902Z ##[group]Run echo "torn down by run 45387766188" | gcloud storage cp - "gs://ai255-p1-shafkat-tfstate/parked"
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0075569Z [36;1mecho "torn down by run 45387766188" | gcloud storage cp - "gs://ai255-p1-shafkat-tfstate/parked"[0m
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0097405Z shell: /usr/bin/bash -e {0}
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0097701Z env:
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0097962Z   TF_VAR_project_id: ai255-p1-shafkat
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0098229Z   TF_VAR_region: us-central1
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0098514Z   TF_VAR_dns_zone: web-zone
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0098809Z   TF_VAR_domain: snip.cloud.gadgetgroveny.com
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0099092Z   TF_IN_AUTOMATION: true
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0099723Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0100372Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0100950Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0101481Z   CLOUDSDK_CORE_PROJECT: ai255-p1-shafkat
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0101746Z   CLOUDSDK_PROJECT: ai255-p1-shafkat
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0102011Z   GCLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0102281Z   GCP_PROJECT: ai255-p1-shafkat
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0102573Z   GOOGLE_CLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0103099Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0103438Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:28.0103739Z ##[endgroup]
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:29.1807286Z Copying file://- to gs://ai255-p1-shafkat-tfstate/parked
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:29.1829907Z   
+Tear everything down	Park the environment (commits will not rebuild it)	2026-11-24T11:50:29.6879248Z ..
+Tear everything down	Delete the application (removes the load balancers)	n++2026-11-24T11:50:29.8960458Z ##[group]Run if [ -n "$(gcloud container clusters list --filter='name=snip' --format='value(name)')" ]; then
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8961142Z [36;1mif [ -n "$(gcloud container clusters list --filter='name=snip' --format='value(name)')" ]; then[0m
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8961639Z [36;1m  gcloud container clusters get-credentials snip --region "us-central1"[0m
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8962090Z [36;1m  kubectl delete namespace snip --ignore-not-found --timeout=900s[0m
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8962412Z [36;1melse[0m
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8962827Z [36;1m  echo "no cluster; nothing to delete"[0m
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8963202Z [36;1mfi[0m
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8982012Z shell: /usr/bin/bash -e {0}
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8982283Z env:
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8982752Z   TF_VAR_project_id: ai255-p1-shafkat
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8983026Z   TF_VAR_region: us-central1
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8983291Z   TF_VAR_dns_zone: web-zone
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8983691Z   TF_VAR_domain: snip.cloud.gadgetgroveny.com
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8984006Z   TF_IN_AUTOMATION: true
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8984537Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8985159Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8985762Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8986185Z   CLOUDSDK_CORE_PROJECT: ai255-p1-shafkat
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8986494Z   CLOUDSDK_PROJECT: ai255-p1-shafkat
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8986748Z   GCLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8986987Z   GCP_PROJECT: ai255-p1-shafkat
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8987262Z   GOOGLE_CLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8987615Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8987947Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:29.8988209Z ##[endgroup]
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:31.2289800Z Fetching cluster endpoint and auth data.
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:31.6719914Z kubeconfig entry generated for snip.
+Tear everything down	Delete the application (removes the load balancers)	2026-11-24T11:50:35.2115818Z namespace "snip" deleted
+Tear everything down	Destroy the infrastructure (terraform destroy)	n++2026-11-24T11:54:53.6536370Z ##[group]Run terraform init -input=false -backend-config="bucket=ai255-p1-shafkat-tfstate"
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6537264Z [36;1mterraform init -input=false -backend-config="bucket=ai255-p1-shafkat-tfstate"[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6537892Z [36;1mterraform destroy -input=false -auto-approve[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6564887Z shell: /usr/bin/bash -e {0}
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6565359Z env:
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6565695Z   TF_VAR_project_id: ai255-p1-shafkat
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6566070Z   TF_VAR_region: us-central1
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6566409Z   TF_VAR_dns_zone: web-zone
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6566775Z   TF_VAR_domain: snip.cloud.gadgetgroveny.com
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6567232Z   TF_IN_AUTOMATION: true
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6567900Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6568854Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6569733Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6570446Z   CLOUDSDK_CORE_PROJECT: ai255-p1-shafkat
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6570860Z   CLOUDSDK_PROJECT: ai255-p1-shafkat
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6571211Z   GCLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6571603Z   GCP_PROJECT: ai255-p1-shafkat
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6571969Z   GOOGLE_CLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6572418Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6573102Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6573453Z ##[endgroup]
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:53.6823001Z [0m[1mInitializing the backend...[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:54.2574846Z [0m[32m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:54.2575501Z Successfully configured the backend "gcs"! Terraform will automatically
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:54.2576177Z use this backend unless the backend configuration changes.[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:54.2577681Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:54.6219439Z [0m[1mInitializing provider plugins...[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:54.6219965Z - Reusing previous version of hashicorp/google from the dependency lock file
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:54.8012783Z - Installing hashicorp/google v7.46.2...
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:56.1937510Z - Installed hashicorp/google v7.46.2 (signed by HashiCorp)
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:56.1938099Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:56.1938757Z [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.2538596Z [0m[1mdata.google_dns_managed_zone.zone: Reading...[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.2541627Z [0m[1mdata.google_project.this: Reading...[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.2542508Z [0m[1mgoogle_service_account.nodes: Refreshing state... [id=projects/ai255-p1-shafkat/serviceAccounts/snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.2543905Z [0m[1mgoogle_compute_global_address.snip: Refreshing state... [id=projects/ai255-p1-shafkat/global/addresses/snip-ip][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.2544540Z [0m[1mgoogle_compute_network.snip: Refreshing state... [id=projects/ai255-p1-shafkat/global/networks/snip][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.2545293Z [0m[1mgoogle_artifact_registry_repository.snip: Refreshing state... [id=projects/ai255-p1-shafkat/locations/us-central1/repositories/snip][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.5970885Z [0m[1mdata.google_dns_managed_zone.zone: Read complete after 1s [id=projects/ai255-p1-shafkat/managedZones/web-zone][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.6142922Z [0m[1mgoogle_project_iam_member.nodes: Refreshing state... [id=ai255-p1-shafkat/roles/container.defaultNodeServiceAccount/serviceAccount:snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.6916013Z [0m[1mgoogle_compute_subnetwork.snip: Refreshing state... [id=projects/ai255-p1-shafkat/regions/us-central1/subnetworks/snip][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.7574992Z [0m[1mgoogle_dns_record_set.site: Refreshing state... [id=projects/ai255-p1-shafkat/managedZones/web-zone/rrsets/snip.cloud.gadgetgroveny.com./A][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.7770331Z [0m[1mgoogle_artifact_registry_repository_iam_member.nodes_pull: Refreshing state... [id=projects/ai255-p1-shafkat/locations/us-central1/repositories/snip/roles/artifactregistry.reader/serviceAccount:snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:58.9550220Z [0m[1mdata.google_project.this: Read complete after 1s [id=projects/ai255-p1-shafkat][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:54:59.0219921Z [0m[1mgoogle_container_cluster.snip: Refreshing state... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:00.2843165Z [0m[1mgoogle_project_iam_member.data_services_firestore: Refreshing state... [id=ai255-p1-shafkat/roles/datastore.user/principal://iam.googleapis.com/projects/152066773754/locations/global/workloadIdentityPools/ai255-p1-shafkat.svc.id.goog/subject/ns/snip/sa/snip-data][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:00.2845472Z [0m[1mgoogle_firestore_database.default: Refreshing state... [id=projects/ai255-p1-shafkat/databases/(default)][0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3938303Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3939654Z Terraform used the selected providers to generate the following execution
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3940443Z plan. Resource actions are indicated with the following symbols:
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3941263Z   [31m-[0m destroy[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3941484Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3941676Z Terraform will perform the following actions:
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3941972Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3942384Z [1m  # google_artifact_registry_repository.snip[0m will be [1m[31mdestroyed[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3943289Z [0m  [31m-[0m[0m resource "google_artifact_registry_repository" "snip" {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3943982Z       [31m-[0m[0m cleanup_policy_dry_run = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3944653Z       [31m-[0m[0m create_time            = "2026-11-24T11:05:32.312760Z" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3945326Z       [31m-[0m[0m deletion_policy        = "DELETE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3945987Z       [31m-[0m[0m description            = "Snip container images" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3946580Z       [31m-[0m[0m effective_labels       = {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3947134Z           [31m-[0m[0m "goog-terraform-provisioned" = "true"
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3947599Z         } [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3948081Z       [31m-[0m[0m format                 = "DOCKER" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3948934Z       [31m-[0m[0m id                     = "projects/ai255-p1-shafkat/locations/us-central1/repositories/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3949672Z       [31m-[0m[0m labels                 = {} [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3950300Z       [31m-[0m[0m location               = "us-central1" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3950941Z       [31m-[0m[0m mode                   = "STANDARD_REPOSITORY" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3951932Z       [31m-[0m[0m name                   = "snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3952517Z       [31m-[0m[0m project                = "ai255-p1-shafkat" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3953500Z       [31m-[0m[0m registry_uri           = "us-central1-docker.pkg.dev/ai255-p1-shafkat/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3954352Z       [31m-[0m[0m repository_id          = "snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3954890Z       [31m-[0m[0m terraform_labels       = {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3955383Z           [31m-[0m[0m "goog-terraform-provisioned" = "true"
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3955829Z         } [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3956451Z       [31m-[0m[0m update_time            = "2026-11-24T11:47:07.395306Z" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3957022Z         [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3957317Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3957525Z       [31m-[0m[0m cleanup_policies {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3957996Z           [31m-[0m[0m action = "DELETE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3958649Z           [31m-[0m[0m id     = "delete-the-rest" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3958947Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3959305Z           [31m-[0m[0m condition {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3959818Z               [31m-[0m[0m older_than            = "604800s" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3960444Z               [31m-[0m[0m package_name_prefixes = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3961046Z               [31m-[0m[0m tag_prefixes          = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3961697Z               [31m-[0m[0m tag_state             = "ANY" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3962328Z               [31m-[0m[0m version_name_prefixes = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3963476Z                 [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3963939Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3964319Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3964688Z       [31m-[0m[0m cleanup_policies {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3965147Z           [31m-[0m[0m action = "KEEP" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3965741Z           [31m-[0m[0m id     = "keep-newest-ten" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3966011Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3966229Z           [31m-[0m[0m most_recent_versions {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3966726Z               [31m-[0m[0m keep_count            = 10 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3967266Z               [31m-[0m[0m package_name_prefixes = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3967714Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3967991Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3968143Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3968366Z       [31m-[0m[0m vulnerability_scanning_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3969022Z           [31m-[0m[0m enablement_state        = "SCANNING_DISABLED" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3969904Z           [31m-[0m[0m enablement_state_reason = "API containerscanning.googleapis.com is not enabled." [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3970671Z             [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3971061Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3971335Z     }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3971538Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3971981Z [1m  # google_artifact_registry_repository_iam_member.nodes_pull[0m will be [1m[31mdestroyed[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3972972Z [0m  [31m-[0m[0m resource "google_artifact_registry_repository_iam_member" "nodes_pull" {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3973674Z       [31m-[0m[0m etag       = "BwZhA7H9qSs=" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3974903Z       [31m-[0m[0m id         = "projects/ai255-p1-shafkat/locations/us-central1/repositories/snip/roles/artifactregistry.reader/serviceAccount:snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3975997Z       [31m-[0m[0m location   = "us-central1" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3976757Z       [31m-[0m[0m member     = "serviceAccount:snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3977695Z       [31m-[0m[0m project    = "ai255-p1-shafkat" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3978538Z       [31m-[0m[0m repository = "projects/ai255-p1-shafkat/locations/us-central1/repositories/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3979316Z       [31m-[0m[0m role       = "roles/artifactregistry.reader" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3979848Z     }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3980214Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3980532Z [1m  # google_compute_global_address.snip[0m will be [1m[31mdestroyed[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3981172Z [0m  [31m-[0m[0m resource "google_compute_global_address" "snip" {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3981852Z       [31m-[0m[0m address            = "136.82.229.12" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3982513Z       [31m-[0m[0m address_type       = "EXTERNAL" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3983376Z       [31m-[0m[0m creation_timestamp = "2026-11-24T03:05:31.461-08:00" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3984008Z       [31m-[0m[0m deletion_policy    = "DELETE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3984528Z       [31m-[0m[0m effective_labels   = {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3985059Z           [31m-[0m[0m "goog-terraform-provisioned" = "true"
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3985667Z         } [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3986268Z       [31m-[0m[0m id                 = "projects/ai255-p1-shafkat/global/addresses/snip-ip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3986967Z       [31m-[0m[0m label_fingerprint  = "vezUS-42LLM=" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3987584Z       [31m-[0m[0m labels             = {} [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3988122Z       [31m-[0m[0m name               = "snip-ip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3988671Z       [31m-[0m[0m prefix_length      = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3989273Z       [31m-[0m[0m project            = "ai255-p1-shafkat" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3990288Z       [31m-[0m[0m self_link          = "https://www.googleapis.com/compute/v1/projects/ai255-p1-shafkat/global/addresses/snip-ip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3991093Z       [31m-[0m[0m terraform_labels   = {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3991703Z           [31m-[0m[0m "goog-terraform-provisioned" = "true"
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3992209Z         } [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3992842Z         [90m# (4 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3993251Z     }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3993442Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3993719Z [1m  # google_compute_network.snip[0m will be [1m[31mdestroyed[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3994324Z [0m  [31m-[0m[0m resource "google_compute_network" "snip" {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3994964Z       [31m-[0m[0m auto_create_subnetworks                   = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3995651Z       [31m-[0m[0m bgp_always_compare_med                    = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3996354Z       [31m-[0m[0m bgp_best_path_selection_mode              = "LEGACY" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3997142Z       [31m-[0m[0m delete_bgp_always_compare_med             = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3997822Z       [31m-[0m[0m delete_default_routes_on_create           = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3998552Z       [31m-[0m[0m deletion_policy                           = "DELETE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.3999231Z       [31m-[0m[0m enable_ula_internal_ipv6                  = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4000070Z       [31m-[0m[0m id                                        = "projects/ai255-p1-shafkat/global/networks/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4000842Z       [31m-[0m[0m mtu                                       = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4001412Z       [31m-[0m[0m name                                      = "snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4002217Z       [31m-[0m[0m network_firewall_policy_enforcement_order = "AFTER_CLASSIC_FIREWALL" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4003521Z       [31m-[0m[0m network_id                                = "8590194298835227028" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4004244Z       [31m-[0m[0m numeric_id                                = "8590194298835227028" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4004902Z       [31m-[0m[0m project                                   = "ai255-p1-shafkat" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4005575Z       [31m-[0m[0m routing_mode                              = "REGIONAL" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4006517Z       [31m-[0m[0m self_link                                 = "https://www.googleapis.com/compute/v1/projects/ai255-p1-shafkat/global/networks/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4007206Z         [90m# (5 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4007882Z     }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4007984Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4008212Z [1m  # google_compute_subnetwork.snip[0m will be [1m[31mdestroyed[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4008636Z [0m  [31m-[0m[0m resource "google_compute_subnetwork" "snip" {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4009060Z       [31m-[0m[0m allow_subnet_cidr_routes_overlap = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4009554Z       [31m-[0m[0m creation_timestamp               = "2026-11-24T03:05:52.781-08:00" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4010170Z       [31m-[0m[0m deletion_policy                  = "DELETE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4010605Z       [31m-[0m[0m gateway_address                  = "10.10.0.1" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4011201Z       [31m-[0m[0m id                               = "projects/ai255-p1-shafkat/regions/us-central1/subnetworks/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4011768Z       [31m-[0m[0m ip_cidr_range                    = "10.10.0.0/20" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4012181Z       [31m-[0m[0m name                             = "snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4013038Z       [31m-[0m[0m network                          = "https://www.googleapis.com/compute/v1/projects/ai255-p1-shafkat/global/networks/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4013673Z       [31m-[0m[0m private_ip_google_access         = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4014159Z       [31m-[0m[0m private_ipv6_google_access       = "DISABLE_GOOGLE_ACCESS" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4014629Z       [31m-[0m[0m project                          = "ai255-p1-shafkat" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4015054Z       [31m-[0m[0m purpose                          = "PRIVATE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4015511Z       [31m-[0m[0m region                           = "us-central1" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4016168Z       [31m-[0m[0m self_link                        = "https://www.googleapis.com/compute/v1/projects/ai255-p1-shafkat/regions/us-central1/subnetworks/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4016813Z       [31m-[0m[0m stack_type                       = "IPV4_ONLY" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4017298Z       [31m-[0m[0m subnetwork_id                    = 6344949438467330431 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4017696Z         [90m# (11 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4017903Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4018026Z       [31m-[0m[0m secondary_ip_range {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4018384Z           [31m-[0m[0m ip_cidr_range           = "10.20.0.0/16" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4018828Z           [31m-[0m[0m range_name              = "pods" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4019215Z             [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4019487Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4019737Z       [31m-[0m[0m secondary_ip_range {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4020108Z           [31m-[0m[0m ip_cidr_range           = "10.30.0.0/20" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4020536Z           [31m-[0m[0m range_name              = "services" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4020988Z             [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4021254Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4021536Z     }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4021633Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4021843Z [1m  # google_container_cluster.snip[0m will be [1m[31mdestroyed[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4022276Z [0m  [31m-[0m[0m resource "google_container_cluster" "snip" {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4022874Z       [31m-[0m[0m autopilot_privileged_admission           = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4023402Z       [31m-[0m[0m cluster_ipv4_cidr                        = "10.20.0.0/16" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4023868Z       [31m-[0m[0m datapath_provider                        = "ADVANCED_DATAPATH" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4024315Z       [31m-[0m[0m default_max_pods_per_node                = 110 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4024820Z       [31m-[0m[0m deletion_policy                          = "DELETE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4025267Z       [31m-[0m[0m deletion_protection                      = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4025735Z       [31m-[0m[0m disable_l4_lb_firewall_reconciliation    = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4026279Z       [31m-[0m[0m effective_labels                         = {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4026665Z           [31m-[0m[0m "goog-terraform-provisioned" = "true"
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4027005Z         } [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4027355Z       [31m-[0m[0m enable_autopilot                         = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4027820Z       [31m-[0m[0m enable_cilium_clusterwide_network_policy = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4028304Z       [31m-[0m[0m enable_fqdn_network_policy               = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4028757Z       [31m-[0m[0m enable_intranode_visibility              = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4029227Z       [31m-[0m[0m enable_kubernetes_alpha                  = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4029671Z       [31m-[0m[0m enable_l4_ilb_subsetting                 = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4030147Z       [31m-[0m[0m enable_legacy_abac                       = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4030590Z       [31m-[0m[0m enable_multi_networking                  = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4031050Z       [31m-[0m[0m enable_shielded_nodes                    = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4031515Z       [31m-[0m[0m enable_tpu                               = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4031935Z       [31m-[0m[0m endpoint                                 = "35.254.150.157" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4032517Z       [31m-[0m[0m id                                       = "projects/ai255-p1-shafkat/locations/us-central1/clusters/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4033272Z       [31m-[0m[0m initial_node_count                       = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4033805Z       [31m-[0m[0m label_fingerprint                        = "78cdf2f6" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4034255Z       [31m-[0m[0m location                                 = "us-central1" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4034745Z       [31m-[0m[0m logging_service                          = "logging.googleapis.com/kubernetes" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4035427Z       [31m-[0m[0m master_version                           = "1.36.4-gke.2377000" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4035988Z       [31m-[0m[0m monitoring_service                       = "monitoring.googleapis.com/kubernetes" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4036506Z       [31m-[0m[0m name                                     = "snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4037006Z       [31m-[0m[0m network                                  = "projects/ai255-p1-shafkat/global/networks/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4037792Z       [31m-[0m[0m networking_mode                          = "VPC_NATIVE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4038258Z       [31m-[0m[0m node_locations                           = [
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4038603Z           [31m-[0m[0m "us-central1-a",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4038950Z           [31m-[0m[0m "us-central1-b",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4039268Z           [31m-[0m[0m "us-central1-c",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4039551Z           [31m-[0m[0m "us-central1-f",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4039902Z         ] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4040294Z       [31m-[0m[0m node_version                             = "1.36.4-gke.2377000" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4040833Z       [31m-[0m[0m project                                  = "ai255-p1-shafkat" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4041306Z       [31m-[0m[0m resource_labels                          = {} [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4042038Z       [31m-[0m[0m self_link                                = "https://container.googleapis.com/v1/projects/ai255-p1-shafkat/locations/us-central1/clusters/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4043015Z       [31m-[0m[0m services_ipv4_cidr                       = "10.30.0.0/20" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4043738Z       [31m-[0m[0m subnetwork                               = "projects/ai255-p1-shafkat/regions/us-central1/subnetworks/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4044334Z       [31m-[0m[0m terraform_labels                         = {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4044707Z           [31m-[0m[0m "goog-terraform-provisioned" = "true"
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4045109Z         } [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4045447Z         [90m# (5 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4045642Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4045761Z       [31m-[0m[0m addons_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4046089Z           [31m-[0m[0m dns_cache_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4046442Z               [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4046771Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4047075Z           [31m-[0m[0m gce_persistent_disk_csi_driver_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4047444Z               [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4047760Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4048047Z           [31m-[0m[0m gcp_filestore_csi_driver_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4048414Z               [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4048700Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4049066Z           [31m-[0m[0m gcs_fuse_csi_driver_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4049411Z               [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4049732Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4050029Z           [31m-[0m[0m network_policy_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4050414Z               [31m-[0m[0m disabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4050768Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4051141Z           [31m-[0m[0m node_readiness_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4051562Z               [31m-[0m[0m enabled = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4051987Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4052339Z           [31m-[0m[0m parallelstore_csi_driver_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4053019Z               [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4053435Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4053738Z           [31m-[0m[0m stateful_ha_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4054194Z               [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4054530Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4054828Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4054952Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4055174Z       [31m-[0m[0m anonymous_authentication_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4055604Z           [31m-[0m[0m mode = "LIMITED" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4056010Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4056166Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4056358Z       [31m-[0m[0m binary_authorization {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4056994Z           [31m-[0m[0m enabled         = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4057462Z             [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4057825Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4058014Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4058201Z       [31m-[0m[0m cluster_autoscaling {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4058674Z           [31m-[0m[0m auto_provisioning_locations   = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4059318Z           [31m-[0m[0m autoscaling_profile           = "OPTIMIZE_UTILIZATION" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4059904Z           [31m-[0m[0m default_compute_class_enabled = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4060498Z           [31m-[0m[0m enabled                       = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4060769Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4060986Z           [31m-[0m[0m auto_provisioning_defaults {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4061456Z               [31m-[0m[0m disk_size         = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4062049Z               [31m-[0m[0m image_type        = "COS_CONTAINERD" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4062783Z               [31m-[0m[0m oauth_scopes      = [
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4063328Z                   [31m-[0m[0m "https://www.googleapis.com/auth/cloud-platform",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4063988Z                 ] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4064651Z               [31m-[0m[0m service_account   = "snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4065350Z                 [90m# (3 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4065649Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4065814Z               [31m-[0m[0m management {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4066261Z                   [31m-[0m[0m auto_repair     = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4066826Z                   [31m-[0m[0m auto_upgrade    = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4067310Z                   [31m-[0m[0m upgrade_options = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4067746Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4067947Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4068110Z               [31m-[0m[0m upgrade_settings {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4068617Z                   [31m-[0m[0m max_surge       = 1 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4069090Z                   [31m-[0m[0m max_unavailable = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4069581Z                   [31m-[0m[0m strategy        = "SURGE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4070022Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4070351Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4070480Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4070703Z           [31m-[0m[0m resource_limits {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4071189Z               [31m-[0m[0m maximum       = 1000000000 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4071699Z               [31m-[0m[0m minimum       = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4072297Z               [31m-[0m[0m resource_type = "cpu" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4072903Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4073285Z           [31m-[0m[0m resource_limits {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4073743Z               [31m-[0m[0m maximum       = 1000000000 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4074281Z               [31m-[0m[0m minimum       = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4074798Z               [31m-[0m[0m resource_type = "memory" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4075209Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4075563Z           [31m-[0m[0m resource_limits {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4076071Z               [31m-[0m[0m maximum       = 1000000000 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4076593Z               [31m-[0m[0m minimum       = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4077173Z               [31m-[0m[0m resource_type = "nvidia-tesla-t4" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4077580Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4077966Z           [31m-[0m[0m resource_limits {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4078426Z               [31m-[0m[0m maximum       = 1000000000 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4079118Z               [31m-[0m[0m minimum       = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4079636Z               [31m-[0m[0m resource_type = "nvidia-tesla-a100" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4080045Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4080434Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4080604Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4080800Z       [31m-[0m[0m control_plane_endpoints_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4081268Z           [31m-[0m[0m dns_endpoint_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4081813Z               [31m-[0m[0m allow_external_traffic    = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4082474Z               [31m-[0m[0m enable_k8s_certs_via_dns  = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4083325Z               [31m-[0m[0m enable_k8s_tokens_via_dns = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4084200Z               [31m-[0m[0m endpoint                  = "gke-7af49fb647d442be95ec3c68024d2e8aea0f-152066773754.us-central1.gke.goog" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4084966Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4085336Z           [31m-[0m[0m ip_endpoints_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4085800Z               [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4086206Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4086532Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4086653Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4087068Z       [31m-[0m[0m database_encryption {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4087531Z           [31m-[0m[0m state    = "DECRYPTED" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4088023Z             [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4088462Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4088593Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4088805Z       [31m-[0m[0m default_snat_status {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4089269Z           [31m-[0m[0m disabled = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4089636Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4089801Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4089989Z       [31m-[0m[0m dns_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4090500Z           [31m-[0m[0m cluster_dns                   = "CLOUD_DNS" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4091201Z           [31m-[0m[0m cluster_dns_domain            = "cluster.local" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4091862Z           [31m-[0m[0m cluster_dns_scope             = "CLUSTER_SCOPE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4092427Z             [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4093030Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4093213Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4093390Z       [31m-[0m[0m enterprise_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4093870Z           [31m-[0m[0m cluster_tier = "STANDARD" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4094401Z             [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4094753Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4094898Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4095075Z       [31m-[0m[0m gateway_api_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4095570Z           [31m-[0m[0m channel = "CHANNEL_STANDARD" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4096007Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4096171Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4096385Z       [31m-[0m[0m ip_allocation_policy {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4096933Z           [31m-[0m[0m cluster_ipv4_cidr_block       = "10.20.0.0/16" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4097589Z           [31m-[0m[0m cluster_secondary_range_name  = "pods" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4098189Z           [31m-[0m[0m services_ipv4_cidr_block      = "10.30.0.0/20" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4098800Z           [31m-[0m[0m services_secondary_range_name = "services" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4099455Z           [31m-[0m[0m stack_type                    = "IPV4" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4099761Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4099953Z           [31m-[0m[0m network_tier_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4100454Z               [31m-[0m[0m network_tier = "NETWORK_TIER_DEFAULT" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4100892Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4101061Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4101226Z           [31m-[0m[0m pod_cidr_overprovision_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4101941Z               [31m-[0m[0m disabled = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4102317Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4102867Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4103036Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4103203Z       [31m-[0m[0m logging_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4103629Z           [31m-[0m[0m enable_components = [
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4104048Z               [31m-[0m[0m "SYSTEM_COMPONENTS",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4104449Z               [31m-[0m[0m "WORKLOADS",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4104861Z             ] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4105215Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4105346Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4105528Z       [31m-[0m[0m master_auth {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4140181Z           [31m-[0m[0m cluster_ca_certificate = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVMVENDQXBXZ0F3SUJBZ0lSQVBKL01DUTFMcUJCdmJRSVFlNVhUQjB3RFFZSktvWklodmNOQVFFTEJRQXcKTHpFdE1Dc0dBMVVFQXhNa1l6QmlOR1JoWXprdFl6aGpOUzAwT0RkbExXSmtaR0V0WXpCak1XTXhZakF5TVRneApNQ0FYRFRJMk1URXlOREV3TURZeE5Gb1lEekl3TlRZeE1URTJNVEV3TmpFMFdqQXZNUzB3S3dZRFZRUURFeVJqCk1HSTBaR0ZqT1Mxak9HTTFMVFE0TjJVdFltUmtZUzFqTUdNeFl6RmlNREl4T0RFd2dnR2lNQTBHQ1NxR1NJYjMKRFFFQkFRVUFBNElCandBd2dnR0tBb0lCZ1FDMHVGOFVOQ21abTgrdFliRlQ3ZDNrRk9Mb0UzN1dIOGJsbThIRAo3SmoxWXBDTENrR1hCOENBYnhsd0ZQVGFjT09FTFlYRFFoZC9uMnFGcExIUi84TDRSZHNhMVRWVmtkVUxJTkFDCjRpTGZRRTMxenU0RzJpUHFOUVlXTUFYWVhEUFcxb2p3M3FTbm5Qakdla09rR0E1ZE0rT1lRZ3dHdkN4MzB4L1QKYjhkTWdkczdLMlhKbXFBZ0xkeWNzc2lzV28rSTJDR0RQUklkTGJHMEhqcloxcnZwbzVEYjNTU2ZobGFxSVYxdAora1hrU3N5c2p0S1E4N0o2ZkpPQXlzUXZyZUlGK0pVVlMrSStsMUtlTVNtcjFTMHVmM2VxejlhMm5QVXp0M0M2CjYzSEJmb2E4K1hBdldvTlN0N3F2bmlibU5NUUJaRkFRbGl4Y082ZkFkdHhoVXp3emVBU0VtVWNHZm9GL1ZDc2EKRW5hK2R5bkJRcGtxMTgvUTZqS3U0dnlnOWJtOEpzZXJ2OWlGcC9BQVpiUFNTcVJXeGRXdE1pZGpwTWdKSFVCMApqY0szUDlHU3ZQeDhRclRJNnh3VWcySGtueUR0Sjk1N3R0V0RvM1Q3eEkyN082cm5qZ1VJQklHR096clIzOFE1CmVzV0NmMFVJN3MvRnAvVnAvUVV5bHlFMDlnTUNBd0VBQWFOQ01FQXdEZ1lEVlIwUEFRSC9CQVFEQWdJRU1BOEcKQTFVZEV3RUIvd1FGTUFNQkFmOHdIUVlEVlIwT0JCWUVGS1VkM1VPVlJia0NQUU5NdStRYklDTHRxYkRSTUEwRwpDU3FHU0liM0RRRUJDd1VBQTRJQmdRQm1jdlozeFIwY0FRSEpXNDJpam05eFMwNzErYUhXL1FnT3QzQTY1UjZ6CktRWWluTitjWkxxUFR4T04yUDNSSzFma2JQQkpXUzlVM1NSZGxtQUViTzg3Q1liUWw3QzZ5WkFhU0puWWRGM1gKUm52NTR0NjdaVVpNSlZ5SEZ4aUtpeEtCSUdtN01KaVJuaHZWL2NNUXczUG5hM014TjE2RkRzbGJONW9uOHArZwpCNTR3dVRoanJoR0J3c3VJcFlsN2xnNXFqakFCM25zY0c0NWNTcjJNM0Q4ekRVOFdHU0lCZGFxRHRvYjd2Uk9rCmhLMEpqekNxdFVFV00rV092VHV0ZEJUYTRpTm5OS01ReFAvbnJTQXUrT01GSVVjMEFiN3ZXR3ZjeDVWbmo0NG8KOTh1cnRKOThQZndLVE1qSmtWc3NmU2QzTjM4eGxVWjNmbTB2MkpudTZOTis0VjhLT3FuTjVKSmJnWFo1dFVhWAphQ0U2TEFCc2N5ZWJqRGZ1eE5zREVQbG1uNmlPVFNYeE1SM3M5QVJaNkNaazh1TGxGNFNLcjNaZnNTbHFPT2pPCkx6YUdVMHhad3NNeFRBcVhmdnpzQjhtdWtkaXZOc1RJekc2RHRKWjRyWVRFWStvSDMxcWVnRVJQMDgxRDcyQ0QKVHhwcGV4Tlk3cVpSNVJ0cEdLQktBYXM9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4175989Z             [90m# (2 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4176270Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4176464Z           [31m-[0m[0m client_certificate_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4176982Z               [31m-[0m[0m issue_client_certificate = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4177460Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4177730Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4177924Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4178083Z       [31m-[0m[0m monitoring_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4178447Z           [31m-[0m[0m enable_components = [
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4178804Z               [31m-[0m[0m "SYSTEM_COMPONENTS",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4179108Z               [31m-[0m[0m "STORAGE",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4179399Z               [31m-[0m[0m "HPA",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4179702Z               [31m-[0m[0m "POD",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4180009Z               [31m-[0m[0m "DAEMONSET",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4180357Z               [31m-[0m[0m "DEPLOYMENT",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4180663Z               [31m-[0m[0m "STATEFULSET",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4180953Z               [31m-[0m[0m "CADVISOR",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4181281Z               [31m-[0m[0m "KUBELET",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4181551Z               [31m-[0m[0m "DCGM",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4181837Z               [31m-[0m[0m "JOBSET",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4182280Z             ] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4182447Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4182758Z           [31m-[0m[0m advanced_datapath_observability_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4183213Z               [31m-[0m[0m enable_metrics = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4183594Z               [31m-[0m[0m enable_relay   = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4183902Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4184051Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4184209Z           [31m-[0m[0m managed_prometheus {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4184550Z               [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4184837Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4185039Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4185165Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4185291Z       [31m-[0m[0m network_policy {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4185649Z           [31m-[0m[0m enabled  = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4186031Z           [31m-[0m[0m provider = "PROVIDER_UNSPECIFIED" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4186350Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4186471Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4186582Z       [31m-[0m[0m node_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4186975Z           [31m-[0m[0m disk_size_gb                = 100 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4187391Z           [31m-[0m[0m disk_type                   = "pd-balanced" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4187878Z           [31m-[0m[0m effective_taints            = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4188332Z           [31m-[0m[0m enable_confidential_storage = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4188737Z           [31m-[0m[0m flex_start                  = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4189198Z           [31m-[0m[0m image_type                  = "COS_CONTAINERD" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4189612Z           [31m-[0m[0m labels                      = {} [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4190037Z           [31m-[0m[0m local_ssd_count             = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4190445Z           [31m-[0m[0m logging_variant             = "DEFAULT" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4190885Z           [31m-[0m[0m machine_type                = "ek-standard-8" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4191311Z           [31m-[0m[0m metadata                    = {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4191688Z               [31m-[0m[0m "disable-legacy-endpoints" = "true"
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4192016Z             } [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4192313Z           [31m-[0m[0m oauth_scopes                = [
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4192837Z               [31m-[0m[0m "https://www.googleapis.com/auth/cloud-platform",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4193285Z             ] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4193628Z           [31m-[0m[0m preemptible                 = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4193997Z           [31m-[0m[0m resource_labels             = {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4194386Z               [31m-[0m[0m "goog-gke-node-pool-provisioning-model" = "on-demand"
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4194794Z             } [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4195138Z           [31m-[0m[0m resource_manager_tags       = {} [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4195665Z           [31m-[0m[0m service_account             = "snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4196184Z           [31m-[0m[0m spot                        = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4196686Z           [31m-[0m[0m storage_pools               = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4197109Z           [31m-[0m[0m tags                        = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4197480Z             [90m# (6 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4197679Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4197804Z           [31m-[0m[0m boot_disk {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4198174Z               [31m-[0m[0m disk_type              = "pd-balanced" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4198671Z               [31m-[0m[0m provisioned_iops       = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4199058Z               [31m-[0m[0m provisioned_throughput = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4199526Z               [31m-[0m[0m size_gb                = 100 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4199804Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4199919Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4200070Z           [31m-[0m[0m gcfs_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4200397Z               [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4200706Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4200810Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4200943Z           [31m-[0m[0m gvnic {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4201230Z               [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4201520Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4201666Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4201808Z           [31m-[0m[0m kubelet_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4202206Z               [31m-[0m[0m allowed_unsafe_sysctls                      = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4203035Z               [31m-[0m[0m container_log_max_files                     = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4203496Z               [31m-[0m[0m cpu_cfs_quota                               = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4204116Z               [31m-[0m[0m eviction_max_pod_grace_period_seconds       = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4204711Z               [31m-[0m[0m image_gc_high_threshold_percent             = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4205262Z               [31m-[0m[0m image_gc_low_threshold_percent              = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4205759Z               [31m-[0m[0m insecure_kubelet_readonly_port_enabled      = "FALSE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4206270Z               [31m-[0m[0m max_parallel_image_pulls                    = 2 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4206743Z               [31m-[0m[0m pod_pids_limit                              = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4207198Z               [31m-[0m[0m shutdown_grace_period_critical_pods_seconds = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4207722Z               [31m-[0m[0m shutdown_grace_period_seconds               = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4208275Z               [31m-[0m[0m single_process_oom_kill                     = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4208695Z                 [90m# (5 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4208995Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4209127Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4209265Z           [31m-[0m[0m node_image_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4209721Z               [31m-[0m[0m image         = "gke-1364-gke2377000-cos-129-19506-505-8-c-pre" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4210197Z               [31m-[0m[0m image_project = "gke-node-images" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4210505Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4210659Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4210814Z           [31m-[0m[0m reservation_affinity {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4211198Z               [31m-[0m[0m consume_reservation_type = "NO_RESERVATION" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4211633Z               [31m-[0m[0m values                   = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4211995Z                 [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4212345Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4212446Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4212715Z           [31m-[0m[0m shielded_instance_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4213095Z               [31m-[0m[0m enable_integrity_monitoring = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4213563Z               [31m-[0m[0m enable_secure_boot          = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4213868Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4213958Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4214157Z           [31m-[0m[0m windows_node_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4214477Z                 [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4214772Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4214954Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4215111Z           [31m-[0m[0m workload_metadata_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4215549Z               [31m-[0m[0m mode = "GKE_METADATA" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4216094Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4216395Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4216540Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4216744Z       [31m-[0m[0m node_creation_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4217271Z           [31m-[0m[0m node_creation_mode = "VIA_KUBELET" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4217727Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4217893Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4218090Z       [31m-[0m[0m node_pool {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4218581Z           [31m-[0m[0m ignore_node_count_changes   = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4219173Z           [31m-[0m[0m initial_node_count          = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4219751Z           [31m-[0m[0m instance_group_urls         = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4220415Z           [31m-[0m[0m managed_instance_group_urls = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4221022Z           [31m-[0m[0m max_pods_per_node           = 64 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4221593Z           [31m-[0m[0m name                        = "nap-1agl6zsc" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4222163Z           [31m-[0m[0m node_count                  = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4223052Z           [31m-[0m[0m node_locations              = [
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4223472Z               [31m-[0m[0m "us-central1-a",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4223920Z               [31m-[0m[0m "us-central1-b",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4224309Z               [31m-[0m[0m "us-central1-c",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4224756Z               [31m-[0m[0m "us-central1-f",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4225139Z             ] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4225626Z           [31m-[0m[0m version                     = "1.36.4-gke.2377000" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4226191Z             [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4226473Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4226660Z           [31m-[0m[0m autoscaling {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4227154Z               [31m-[0m[0m location_policy      = "BALANCED" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4227722Z               [31m-[0m[0m max_node_count       = 1000 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4228227Z               [31m-[0m[0m min_node_count       = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4228819Z               [31m-[0m[0m total_max_node_count = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4229344Z               [31m-[0m[0m total_min_node_count = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4229755Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4229954Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4230117Z           [31m-[0m[0m management {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4230603Z               [31m-[0m[0m auto_repair  = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4231092Z               [31m-[0m[0m auto_upgrade = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4231473Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4231649Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4231817Z           [31m-[0m[0m network_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4232461Z               [31m-[0m[0m create_pod_range            = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4233298Z               [31m-[0m[0m enable_private_nodes        = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4233935Z               [31m-[0m[0m pod_ipv4_cidr_block         = "10.20.0.0/16" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4234553Z               [31m-[0m[0m pod_range                   = "pods" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4235389Z               [31m-[0m[0m subnetwork                  = "projects/ai255-p1-shafkat/regions/us-central1/subnetworks/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4236101Z                 [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4236473Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4236639Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4236820Z           [31m-[0m[0m node_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4237278Z               [31m-[0m[0m disk_size_gb                = 100 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4238072Z               [31m-[0m[0m disk_type                   = "pd-balanced" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4238648Z               [31m-[0m[0m effective_taints            = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4239291Z               [31m-[0m[0m enable_confidential_storage = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4239901Z               [31m-[0m[0m flex_start                  = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4240509Z               [31m-[0m[0m image_type                  = "COS_CONTAINERD" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4241092Z               [31m-[0m[0m labels                      = {} [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4241669Z               [31m-[0m[0m local_ssd_count             = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4242264Z               [31m-[0m[0m logging_variant             = "DEFAULT" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4243193Z               [31m-[0m[0m machine_type                = "ek-standard-8" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4243823Z               [31m-[0m[0m metadata                    = {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4244302Z                   [31m-[0m[0m "disable-legacy-endpoints" = "true"
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4244865Z                 } [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4245313Z               [31m-[0m[0m oauth_scopes                = [
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4245923Z                   [31m-[0m[0m "https://www.googleapis.com/auth/cloud-platform",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4246412Z                 ] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4246869Z               [31m-[0m[0m preemptible                 = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4247232Z               [31m-[0m[0m resource_labels             = {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4247676Z                   [31m-[0m[0m "goog-gke-node-pool-provisioning-model" = "on-demand"
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4248053Z                 } [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4248457Z               [31m-[0m[0m resource_manager_tags       = {} [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4249155Z               [31m-[0m[0m service_account             = "snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4249873Z               [31m-[0m[0m spot                        = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4250388Z               [31m-[0m[0m storage_pools               = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4250900Z               [31m-[0m[0m tags                        = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4251362Z                 [90m# (6 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4251610Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4251779Z               [31m-[0m[0m boot_disk {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4252223Z                   [31m-[0m[0m disk_type              = "pd-balanced" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4252897Z                   [31m-[0m[0m provisioned_iops       = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4253481Z                   [31m-[0m[0m provisioned_throughput = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4253957Z                   [31m-[0m[0m size_gb                = 100 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4254249Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4254376Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4254515Z               [31m-[0m[0m gcfs_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4254896Z                   [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4255162Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4255283Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4255431Z               [31m-[0m[0m gvnic {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4255738Z                   [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4256058Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4256164Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4256335Z               [31m-[0m[0m kubelet_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4256719Z                   [31m-[0m[0m allowed_unsafe_sysctls                      = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4257330Z                   [31m-[0m[0m container_log_max_files                     = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4257821Z                   [31m-[0m[0m cpu_cfs_quota                               = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4258322Z                   [31m-[0m[0m eviction_max_pod_grace_period_seconds       = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4258802Z                   [31m-[0m[0m image_gc_high_threshold_percent             = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4259256Z                   [31m-[0m[0m image_gc_low_threshold_percent              = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4259799Z                   [31m-[0m[0m insecure_kubelet_readonly_port_enabled      = "FALSE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4260288Z                   [31m-[0m[0m max_parallel_image_pulls                    = 2 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4260770Z                   [31m-[0m[0m pod_pids_limit                              = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4261257Z                   [31m-[0m[0m shutdown_grace_period_critical_pods_seconds = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4261727Z                   [31m-[0m[0m shutdown_grace_period_seconds               = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4262260Z                   [31m-[0m[0m single_process_oom_kill                     = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4262888Z                     [90m# (5 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4263234Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4263342Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4263499Z               [31m-[0m[0m node_image_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4263949Z                   [31m-[0m[0m image         = "gke-1364-gke2377000-cos-129-19506-505-8-c-pre" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4264468Z                   [31m-[0m[0m image_project = "gke-node-images" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4264792Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4264913Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4265087Z               [31m-[0m[0m reservation_affinity {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4265483Z                   [31m-[0m[0m consume_reservation_type = "NO_RESERVATION" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4265948Z                   [31m-[0m[0m values                   = [] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4266322Z                     [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4266602Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4266756Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4266893Z               [31m-[0m[0m shielded_instance_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4267293Z                   [31m-[0m[0m enable_integrity_monitoring = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4267721Z                   [31m-[0m[0m enable_secure_boot          = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4268026Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4268177Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4268291Z               [31m-[0m[0m windows_node_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4268663Z                     [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4268935Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4269064Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4269209Z               [31m-[0m[0m workload_metadata_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4269550Z                   [31m-[0m[0m mode = "GKE_METADATA" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4269884Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4270092Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4270220Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4270342Z           [31m-[0m[0m placement_policy {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4270676Z                 [90m# (3 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4270988Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4271086Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4271235Z           [31m-[0m[0m upgrade_settings {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4271565Z               [31m-[0m[0m max_surge       = 1 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4271919Z               [31m-[0m[0m max_unavailable = 0 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4272314Z               [31m-[0m[0m strategy        = "SURGE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4272816Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4273030Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4273168Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4273297Z       [31m-[0m[0m node_pool_auto_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4273648Z           [31m-[0m[0m resource_manager_tags = {} [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4273852Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4274008Z           [31m-[0m[0m node_kubelet_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4274431Z               [31m-[0m[0m insecure_kubelet_readonly_port_enabled = "FALSE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4274771Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4275004Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4275099Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4275226Z       [31m-[0m[0m node_pool_defaults {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4275565Z           [31m-[0m[0m node_config_defaults {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4275961Z               [31m-[0m[0m insecure_kubelet_readonly_port_enabled = "FALSE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4276472Z               [31m-[0m[0m logging_variant                        = "DEFAULT" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4276697Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4276838Z               [31m-[0m[0m gcfs_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4277145Z                   [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4277453Z                 }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4277686Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4277939Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4278056Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4278174Z       [31m-[0m[0m notification_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4278441Z           [31m-[0m[0m pubsub {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4278817Z               [31m-[0m[0m enabled = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4279159Z                 [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4279434Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4279629Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4279752Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4279917Z       [31m-[0m[0m pod_autoscaling {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4280269Z           [31m-[0m[0m hpa_profile = "PERFORMANCE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4280560Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4280684Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4280814Z       [31m-[0m[0m private_cluster_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4281203Z           [31m-[0m[0m enable_private_endpoint     = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4281627Z           [31m-[0m[0m enable_private_nodes        = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4282063Z           [31m-[0m[0m private_endpoint            = "10.10.0.2" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4282777Z           [31m-[0m[0m public_endpoint             = "35.254.150.157" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4283250Z             [90m# (3 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4283427Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4283597Z           [31m-[0m[0m master_global_access_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4283969Z               [31m-[0m[0m enabled = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4284259Z             }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4284477Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4284651Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4284806Z       [31m-[0m[0m rbac_binding_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4285216Z           [31m-[0m[0m enable_insecure_binding_system_authenticated   = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4285740Z           [31m-[0m[0m enable_insecure_binding_system_unauthenticated = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4286124Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4286220Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4286352Z       [31m-[0m[0m release_channel {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4286690Z           [31m-[0m[0m channel = "REGULAR" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4286960Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4287086Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4287259Z       [31m-[0m[0m secret_manager_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4287577Z           [31m-[0m[0m enabled = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4287832Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4287978Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4288118Z       [31m-[0m[0m secret_sync_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4288454Z           [31m-[0m[0m enabled = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4288731Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4288918Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4289047Z       [31m-[0m[0m security_posture_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4289417Z           [31m-[0m[0m mode               = "BASIC" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4289874Z           [31m-[0m[0m vulnerability_mode = "VULNERABILITY_MODE_UNSPECIFIED" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4290246Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4290366Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4290509Z       [31m-[0m[0m service_external_ips_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4290865Z           [31m-[0m[0m enabled = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4291131Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4291231Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4291404Z       [31m-[0m[0m vertical_pod_autoscaling {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4291729Z           [31m-[0m[0m enabled = true [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4292026Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4292119Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4292269Z       [31m-[0m[0m workload_identity_config {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4292792Z           [31m-[0m[0m workload_pool = "ai255-p1-shafkat.svc.id.goog" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4293170Z         }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4293379Z     }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4293490Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4293713Z [1m  # google_dns_record_set.site[0m will be [1m[31mdestroyed[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4294100Z [0m  [31m-[0m[0m resource "google_dns_record_set" "site" {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4294523Z       [31m-[0m[0m deletion_policy = "DELETE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4295166Z       [31m-[0m[0m id              = "projects/ai255-p1-shafkat/managedZones/web-zone/rrsets/snip.cloud.gadgetgroveny.com./A" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4295705Z       [31m-[0m[0m managed_zone    = "web-zone" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4296140Z       [31m-[0m[0m name            = "snip.cloud.gadgetgroveny.com." [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4296568Z       [31m-[0m[0m project         = "ai255-p1-shafkat" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4296960Z       [31m-[0m[0m rrdatas         = [
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4297251Z           [31m-[0m[0m "136.82.229.12",
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4297515Z         ] [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4297845Z       [31m-[0m[0m ttl             = 300 [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4298218Z       [31m-[0m[0m type            = "A" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4298524Z     }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4298619Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4298842Z [1m  # google_firestore_database.default[0m will be [1m[31mdestroyed[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4299246Z [0m  [31m-[0m[0m resource "google_firestore_database" "default" {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4299721Z       [31m-[0m[0m app_engine_integration_mode         = "DISABLED" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4300184Z       [31m-[0m[0m concurrency_mode                    = "PESSIMISTIC" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4300692Z       [31m-[0m[0m create_time                         = "2026-11-24T11:13:51.229448Z" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4301156Z       [31m-[0m[0m database_edition                    = "STANDARD" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4301677Z       [31m-[0m[0m delete_protection_state             = "DELETE_PROTECTION_DISABLED" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4302167Z       [31m-[0m[0m deletion_policy                     = "DELETE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4302800Z       [31m-[0m[0m earliest_version_time               = "2026-11-24T11:13:51.229448Z" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4303421Z       [31m-[0m[0m etag                                = "IObbvorGoJgDMImWq5G+oJgD" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4303940Z       [31m-[0m[0m id                                  = "projects/ai255-p1-shafkat/databases/(default)" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4304416Z       [31m-[0m[0m key_prefix                          = "s" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4304862Z       [31m-[0m[0m location_id                         = "nam5" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4305422Z       [31m-[0m[0m name                                = "(default)" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4306025Z       [31m-[0m[0m point_in_time_recovery_enablement   = "POINT_IN_TIME_RECOVERY_DISABLED" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4306524Z       [31m-[0m[0m project                             = "ai255-p1-shafkat" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4307048Z       [31m-[0m[0m realtime_updates_mode               = "REALTIME_UPDATES_MODE_ENABLED" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4307512Z       [31m-[0m[0m type                                = "FIRESTORE_NATIVE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4307995Z       [31m-[0m[0m uid                                 = "ad8a9310-f6b8-4964-b3c2-1b2ff26202df" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4308652Z       [31m-[0m[0m update_time                         = "2026-11-24T11:13:51.229448Z" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4309377Z       [31m-[0m[0m version_retention_period            = "3600s" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4309958Z         [90m# (2 unchanged attributes hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4310323Z     }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4310513Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4310857Z [1m  # google_project_iam_member.data_services_firestore[0m will be [1m[31mdestroyed[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4311647Z [0m  [31m-[0m[0m resource "google_project_iam_member" "data_services_firestore" {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4312324Z       [31m-[0m[0m etag    = "BwZhA85Q3No=" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4313993Z       [31m-[0m[0m id      = "ai255-p1-shafkat/roles/datastore.user/principal://iam.googleapis.com/projects/152066773754/locations/global/workloadIdentityPools/ai255-p1-shafkat.svc.id.goog/subject/ns/snip/sa/snip-data" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4315909Z       [31m-[0m[0m member  = "principal://iam.googleapis.com/projects/152066773754/locations/global/workloadIdentityPools/ai255-p1-shafkat.svc.id.goog/subject/ns/snip/sa/snip-data" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4316901Z       [31m-[0m[0m project = "ai255-p1-shafkat" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4317459Z       [31m-[0m[0m role    = "roles/datastore.user" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4317874Z     }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4318025Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4318341Z [1m  # google_project_iam_member.nodes[0m will be [1m[31mdestroyed[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4318947Z [0m  [31m-[0m[0m resource "google_project_iam_member" "nodes" {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4319448Z       [31m-[0m[0m etag    = "BwZhA85Q3No=" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4320431Z       [31m-[0m[0m id      = "ai255-p1-shafkat/roles/container.defaultNodeServiceAccount/serviceAccount:snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4321545Z       [31m-[0m[0m member  = "serviceAccount:snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4322320Z       [31m-[0m[0m project = "ai255-p1-shafkat" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4323240Z       [31m-[0m[0m role    = "roles/container.defaultNodeServiceAccount" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4323819Z     }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4323956Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4324263Z [1m  # google_service_account.nodes[0m will be [1m[31mdestroyed[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4324804Z [0m  [31m-[0m[0m resource "google_service_account" "nodes" {
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4325403Z       [31m-[0m[0m account_id      = "snip-nodes" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4325955Z       [31m-[0m[0m deletion_policy = "DELETE" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4326462Z       [31m-[0m[0m disabled        = false [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4326977Z       [31m-[0m[0m display_name    = "Snip GKE nodes" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4327693Z       [31m-[0m[0m email           = "snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4328682Z       [31m-[0m[0m id              = "projects/ai255-p1-shafkat/serviceAccounts/snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4329844Z       [31m-[0m[0m member          = "serviceAccount:snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4330875Z       [31m-[0m[0m name            = "projects/ai255-p1-shafkat/serviceAccounts/snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4331749Z       [31m-[0m[0m project         = "ai255-p1-shafkat" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4332357Z       [31m-[0m[0m unique_id       = "116741019923372751086" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4333085Z         [90m# (1 unchanged attribute hidden)[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4333444Z     }
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4333626Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4333868Z [1mPlan:[0m [0m0 to add, 0 to change, 11 to destroy.
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4334117Z 
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4334259Z Changes to Outputs:
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4334716Z   [31m-[0m[0m cluster_location = "us-central1" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4335298Z   [31m-[0m[0m cluster_name     = "snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4335806Z   [31m-[0m[0m https_address    = "136.82.229.12" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4336485Z   [31m-[0m[0m registry         = "us-central1-docker.pkg.dev/ai255-p1-shafkat/snip" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:01.4337353Z   [31m-[0m[0m url              = "https://snip.cloud.gadgetgroveny.com" [90m-> null[0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:02.0114391Z [0m[1mgoogle_project_iam_member.data_services_firestore: Destroying... [id=ai255-p1-shafkat/roles/datastore.user/principal://iam.googleapis.com/projects/152066773754/locations/global/workloadIdentityPools/ai255-p1-shafkat.svc.id.goog/subject/ns/snip/sa/snip-data][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:02.0116850Z [0m[1mgoogle_firestore_database.default: Destroying... [id=projects/ai255-p1-shafkat/databases/(default)][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:02.0121835Z [0m[1mgoogle_dns_record_set.site: Destroying... [id=projects/ai255-p1-shafkat/managedZones/web-zone/rrsets/snip.cloud.gadgetgroveny.com./A][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:03.0002876Z [0m[1mgoogle_firestore_database.default: Destruction complete after 1s[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:04.7695851Z [0m[1mgoogle_dns_record_set.site: Destruction complete after 3s[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:04.7704196Z [0m[1mgoogle_compute_global_address.snip: Destroying... [id=projects/ai255-p1-shafkat/global/addresses/snip-ip][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:09.5491451Z [0m[1mgoogle_project_iam_member.data_services_firestore: Destruction complete after 8s[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:09.5572879Z [0m[1mgoogle_container_cluster.snip: Destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:14.7735159Z [0m[1mgoogle_compute_global_address.snip: Still destroying... [id=projects/ai255-p1-shafkat/global/addresses/snip-ip, 00m10s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:15.6419350Z [0m[1mgoogle_compute_global_address.snip: Destruction complete after 11s[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:19.5601696Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 00m10s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:29.5610153Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 00m20s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:39.5638109Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 00m30s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:49.5638710Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 00m40s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:55:59.5649946Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 00m50s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:56:09.5680718Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 01m00s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:56:19.5709332Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 01m10s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:56:29.5711639Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 01m20s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:56:39.5735048Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 01m30s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:56:49.5737534Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 01m40s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:56:59.5749823Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 01m50s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:57:09.5752892Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 02m00s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:57:19.5775528Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 02m10s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:57:29.5777188Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 02m20s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:57:39.5779798Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 02m30s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:57:49.5811609Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 02m40s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:57:59.5843335Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 02m50s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:58:09.5868454Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 03m00s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:58:19.5892421Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 03m10s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:58:29.5901109Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 03m20s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:58:39.5926135Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 03m30s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:58:49.5952840Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 03m40s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:58:59.5976979Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 03m50s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:59:09.6000888Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 04m00s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:59:19.6027006Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 04m10s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:59:29.6046346Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 04m20s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:59:39.6071103Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 04m30s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:59:49.6075624Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 04m40s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T11:59:59.6097308Z [0m[1mgoogle_container_cluster.snip: Still destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/clusters/snip, 04m50s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:05.2677906Z [0m[1mgoogle_container_cluster.snip: Destruction complete after 4m55s[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:05.4460661Z [0m[1mgoogle_artifact_registry_repository_iam_member.nodes_pull: Destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/repositories/snip/roles/artifactregistry.reader/serviceAccount:snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:05.4465270Z [0m[1mgoogle_project_iam_member.nodes: Destroying... [id=ai255-p1-shafkat/roles/container.defaultNodeServiceAccount/serviceAccount:snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:05.4466669Z [0m[1mgoogle_compute_subnetwork.snip: Destroying... [id=projects/ai255-p1-shafkat/regions/us-central1/subnetworks/snip][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:09.7343022Z [0m[1mgoogle_artifact_registry_repository_iam_member.nodes_pull: Destruction complete after 5s[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:09.7356335Z [0m[1mgoogle_artifact_registry_repository.snip: Destroying... [id=projects/ai255-p1-shafkat/locations/us-central1/repositories/snip][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:10.0613061Z [0m[1mgoogle_artifact_registry_repository.snip: Destruction complete after 0s[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:13.0579839Z [0m[1mgoogle_project_iam_member.nodes: Destruction complete after 8s[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:13.0586724Z [0m[1mgoogle_service_account.nodes: Destroying... [id=projects/ai255-p1-shafkat/serviceAccounts/snip-nodes@ai255-p1-shafkat.iam.gserviceaccount.com][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:13.5429898Z [0m[1mgoogle_service_account.nodes: Destruction complete after 1s[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:15.4479746Z [0m[1mgoogle_compute_subnetwork.snip: Still destroying... [id=projects/ai255-p1-shafkat/regions/us-central1/subnetworks/snip, 00m10s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:25.4492557Z [0m[1mgoogle_compute_subnetwork.snip: Still destroying... [id=projects/ai255-p1-shafkat/regions/us-central1/subnetworks/snip, 00m20s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:27.2643442Z [0m[1mgoogle_compute_subnetwork.snip: Destruction complete after 22s[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:27.4096535Z [0m[1mgoogle_compute_network.snip: Destroying... [id=projects/ai255-p1-shafkat/global/networks/snip][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:37.4099314Z [0m[1mgoogle_compute_network.snip: Still destroying... [id=projects/ai255-p1-shafkat/global/networks/snip, 00m10s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:47.4107739Z [0m[1mgoogle_compute_network.snip: Still destroying... [id=projects/ai255-p1-shafkat/global/networks/snip, 00m20s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:57.4109300Z [0m[1mgoogle_compute_network.snip: Still destroying... [id=projects/ai255-p1-shafkat/global/networks/snip, 00m30s elapsed][0m[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:58.7527025Z [0m[1mgoogle_compute_network.snip: Destruction complete after 32s[0m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:59.1520914Z [0m[1m[32m
+Tear everything down	Destroy the infrastructure (terraform destroy)	2026-11-24T12:00:59.1523955Z Destroy complete! Resources: 11 destroyed.[0m
+Tear everything down	Prove nothing is left	n++2026-11-24T12:00:59.1592057Z ##[group]Run # pipefail: without it the step takes tee's exit code and would
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1592571Z [36;1m# pipefail: without it the step takes tee's exit code and would[0m
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1593732Z [36;1m# pass even when the script found something.[0m
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1594052Z [36;1mset -o pipefail[0m
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1594519Z [36;1mbash scripts/verify_destroyed.sh "ai255-p1-shafkat" "web-zone" "snip.cloud.gadgetgroveny.com" | tee -a "$GITHUB_STEP_SUMMARY"[0m
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1613044Z shell: /usr/bin/bash -e {0}
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1613373Z env:
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1613605Z   TF_VAR_project_id: ai255-p1-shafkat
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1613926Z   TF_VAR_region: us-central1
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1614184Z   TF_VAR_dns_zone: web-zone
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1614452Z   TF_VAR_domain: snip.cloud.gadgetgroveny.com
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1614753Z   TF_IN_AUTOMATION: true
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1615229Z   CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1615997Z   GOOGLE_APPLICATION_CREDENTIALS: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1616699Z   GOOGLE_GHA_CREDS_PATH: /home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1617120Z   CLOUDSDK_CORE_PROJECT: ai255-p1-shafkat
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1617427Z   CLOUDSDK_PROJECT: ai255-p1-shafkat
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1617693Z   GCLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1617977Z   GCP_PROJECT: ai255-p1-shafkat
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1618233Z   GOOGLE_CLOUD_PROJECT: ai255-p1-shafkat
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1618591Z   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1618915Z   CLOUDSDK_METRICS_ENVIRONMENT_VERSION: 2.2.1
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1619185Z ##[endgroup]
+Tear everything down	Prove nothing is left	2026-11-24T12:00:59.1689872Z ```
+Tear everything down	Prove nothing is left	2026-11-24T12:01:00.1163450Z gone   GKE cluster
+Tear everything down	Prove nothing is left	2026-11-24T12:01:00.9177113Z gone   Firestore database
+Tear everything down	Prove nothing is left	2026-11-24T12:01:03.1146788Z gone   image repository
+Tear everything down	Prove nothing is left	2026-11-24T12:01:03.9214382Z gone   network
+Tear everything down	Prove nothing is left	2026-11-24T12:01:05.0288599Z gone   subnet
+Tear everything down	Prove nothing is left	2026-11-24T12:01:05.9077681Z gone   reserved address
+Tear everything down	Prove nothing is left	2026-11-24T12:01:06.4233870Z gone   DNS record
+Tear everything down	Prove nothing is left	2026-11-24T12:01:06.9155250Z gone   node service account
+Tear everything down	Prove nothing is left	2026-11-24T12:01:07.7449082Z gone   forwarding rules
+Tear everything down	Prove nothing is left	2026-11-24T12:01:08.4847164Z gone   target HTTP proxies
+Tear everything down	Prove nothing is left	2026-11-24T12:01:09.2464874Z gone   target HTTPS proxies
+Tear everything down	Prove nothing is left	2026-11-24T12:01:10.0932461Z gone   URL maps
+Tear everything down	Prove nothing is left	2026-11-24T12:01:10.9143603Z gone   backend services
+Tear everything down	Prove nothing is left	2026-11-24T12:01:11.6506129Z gone   target pools
+Tear everything down	Prove nothing is left	2026-11-24T12:01:12.4011145Z gone   health checks
+Tear everything down	Prove nothing is left	2026-11-24T12:01:13.1610801Z gone   endpoint groups
+Tear everything down	Prove nothing is left	2026-11-24T12:01:13.9037072Z gone   certificates
+Tear everything down	Prove nothing is left	2026-11-24T12:01:14.6395662Z gone   firewall rules
+Tear everything down	Prove nothing is left	2026-11-24T12:01:15.4324143Z gone   disks
+Tear everything down	Prove nothing is left	2026-11-24T12:01:16.0555269Z gone   IAM: Firestore binding
+Tear everything down	Prove nothing is left	2026-11-24T12:01:16.6457044Z gone   IAM: node binding
+Tear everything down	Prove nothing is left	2026-11-24T12:01:16.6457391Z ```
+Tear everything down	Prove nothing is left	2026-11-24T12:01:16.6457591Z Nothing left. The environment is gone.
+Tear everything down	Post Run google-github-actions/auth@v2	n++2026-11-24T12:01:16.6544552Z Post job cleanup.
+Tear everything down	Post Run google-github-actions/auth@v2	2026-11-24T12:01:16.7235054Z Removed exported credentials at "/home/runner/work/ai255-project3/ai255-project3/gha-creds-b0fe173a4fd81d64.json".
+Tear everything down	Post Run actions/checkout@v4	n++2026-11-24T12:01:16.7335306Z Post job cleanup.
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.7929036Z [command]/usr/bin/git version
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.7958465Z git version 2.56.1
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.7981999Z Temporarily overriding HOME='/home/runner/work/_temp/07666436-b343-4998-98ad-2a9e734f981b' before making global git config changes
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.7983165Z Adding repository directory to the temporary git global config as a safe directory
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.7985425Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/ai255-project3/ai255-project3
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.8012942Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.8035681Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.8228172Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.8243503Z http.https://github.com/.extraheader
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.8250178Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.8273171Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.8457519Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Tear everything down	Post Run actions/checkout@v4	2026-11-24T12:01:16.8483917Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Tear everything down	Complete job	n++2026-11-24T12:01:16.8798303Z Cleaning up orphan processes
+Tear everything down	Complete job	2026-11-24T12:01:16.9031474Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, google-github-actions/auth@v2, google-github-actions/setup-gcloud@v2, hashicorp/setup-terraform@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
