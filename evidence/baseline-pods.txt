@@ -1,8 +1,0 @@
-﻿# captured 2026-11-15 04:15:26
-NAME                     READY   STATUS    RESTARTS   AGE     IP              NODE                                  NOMINATED NODE   READINESS GATES
-links-66cb5bc4c-kq4hg    1/1     Running   0          2m41s   10.89.128.28    gk3-snip-nap-1nub23xe-7d1bef86-vmwq   <none>           <none>
-links-66cb5bc4c-xxb5l    1/1     Running   0          3m5s    10.89.129.135   gk3-snip-nap-1nub23xe-45d1a1d2-5lsc   <none>           <none>
-stats-689c8fdd8c-d7kq4   1/1     Running   0          3m4s    10.89.129.136   gk3-snip-nap-1nub23xe-45d1a1d2-5lsc   <none>           <none>
-stats-689c8fdd8c-gls4l   1/1     Running   0          2m40s   10.89.128.131   gk3-snip-nap-1nub23xe-d63248a7-2n6r   <none>           <none>
-web-5d4cc5f48b-27vcr     1/1     Running   0          3m4s    10.89.129.137   gk3-snip-nap-1nub23xe-45d1a1d2-5lsc   <none>           <none>
-web-5d4cc5f48b-h757w     1/1     Running   0          2m3s    10.89.128.130   gk3-snip-nap-1nub23xe-d63248a7-2n6r   <none>           <none>

@@ -1,5 +1,0 @@
-﻿# captured 2026-11-15 03:57:51
-NAME    TYPE           CLUSTER-IP       EXTERNAL-IP    PORT(S)        AGE     SELECTOR
-links   ClusterIP      34.118.228.218   <none>         8080/TCP       6m31s   app=links
-stats   ClusterIP      34.118.225.146   <none>         8080/TCP       6m30s   app=stats
-web     LoadBalancer   34.118.226.48    34.171.202.5   80:32547/TCP   6m29s   app=web

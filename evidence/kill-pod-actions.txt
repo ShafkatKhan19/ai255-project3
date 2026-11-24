@@ -1,5 +1,0 @@
-# kill one web pod, then one links pod, while availability.py runs
-03:56:35  availability.py started (75 s, 5 requests a second to /api/links)
-03:56:48  deleted web pod web-d7d9459d7-d5jzt
-03:57:13  deleted links pod links-988cb4998-lgkhz
-03:57:50  availability.py finished

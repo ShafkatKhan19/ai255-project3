@@ -1,3 +1,0 @@
-GET http://34.171.202.5/api/links for 75s
-second  ok  failed  slowest_ms  statuses
-   ...

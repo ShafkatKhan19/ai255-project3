@@ -1,1 +1,0 @@
-**Result.** With zero stats pods, all 149 requests to `/api/links` still returned 200, a short link still redirected (307), and `/api/status` reported `stats: down`, which the page shows as a red dot. Click counts were hidden and the clicks made during the outage were not counted. After scaling stats back to 2 pods, the status returned to `ok` with no restart of web.

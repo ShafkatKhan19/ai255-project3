@@ -1,8 +1,0 @@
-﻿# captured 2026-11-15 04:15:29
-NAME                     CPU(cores)   MEMORY(bytes)   
-links-66cb5bc4c-kq4hg    4m           59Mi            
-links-66cb5bc4c-xxb5l    5m           70Mi            
-stats-689c8fdd8c-d7kq4   5m           57Mi            
-stats-689c8fdd8c-gls4l   3m           59Mi            
-web-5d4cc5f48b-27vcr     4m           37Mi            
-web-5d4cc5f48b-h757w     3m           42Mi            

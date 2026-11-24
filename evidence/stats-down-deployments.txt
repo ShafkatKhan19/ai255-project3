@@ -1,5 +1,0 @@
-﻿# captured 2026-11-15 04:03:51
-NAME    READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                                                                   SELECTOR
-links   2/2     2            2           12m   links        us-central1-docker.pkg.dev/ai255-p1-shafkat/snip/links:20261115-034955   app=links
-stats   0/0     0            0           12m   stats        us-central1-docker.pkg.dev/ai255-p1-shafkat/snip/stats:20261115-034955   app=stats
-web     6/6     6            6           12m   web          us-central1-docker.pkg.dev/ai255-p1-shafkat/snip/web:20261115-034955     app=web

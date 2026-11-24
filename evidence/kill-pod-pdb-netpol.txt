@@ -1,8 +1,0 @@
-﻿# captured 2026-11-15 03:57:52
-NAME                               MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
-poddisruptionbudget.policy/links   1               N/A               1                     6m33s
-poddisruptionbudget.policy/stats   1               N/A               1                     6m32s
-poddisruptionbudget.policy/web     1               N/A               1                     6m31s
-
-NAME                                                     POD-SELECTOR           AGE
-networkpolicy.networking.k8s.io/backends-only-from-web   app in (links,stats)   6m32s

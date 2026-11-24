@@ -1,6 +1,0 @@
-﻿# captured 2026-11-15 04:05:07
-NAME                    CPU(cores)   MEMORY(bytes)   
-stats-7f74f96c4-6bfzn   5m           57Mi            
-stats-7f74f96c4-trps4   6m           57Mi            
-web-d7d9459d7-fklwm     4m           46Mi            
-web-d7d9459d7-fwxhp     5m           40Mi            

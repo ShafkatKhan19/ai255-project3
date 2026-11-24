@@ -1,5 +1,0 @@
-﻿# captured 2026-11-15 04:05:04
-NAME    REFERENCE          TARGETS              MINPODS   MAXPODS   REPLICAS   AGE
-links   Deployment/links   cpu: <unknown>/60%   2         6         2          13m
-stats   Deployment/stats   cpu: 1%/60%          2         6         2          13m
-web     Deployment/web     cpu: 4%/60%          2         6         2          13m
