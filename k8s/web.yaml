@@ -33,7 +33,9 @@ spec:
               app: web
       containers:
         - name: web
-          image: __REGISTRY__/web:__TAG__
+          # Placeholder name. The pipeline points it at the image it
+          # just pushed, tagged with the commit (kustomize edit set image).
+          image: snip/web
           ports:
             - containerPort: 8080
           env:

@@ -1,0 +1,45 @@
+# One command applies the whole application:
+#
+#   kubectl apply -k k8s
+#
+# The files here are complete Kubernetes manifests. Only three things
+# differ between environments, and Kustomize fills them in:
+#   - the image for each service (set by the pipeline to the commit it built)
+#   - the Google Cloud project ID  } both read from params.env, which the
+#   - the domain name              } pipeline writes from Terraform's outputs
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - namespace.yaml
+  - links.yaml
+  - stats.yaml
+  - web.yaml
+  - network-policy.yaml
+  - https.yaml
+
+# params.env becomes a ConfigMap. Kustomize adds a hash of the contents to
+# its name, so changing a value also restarts the pods that read it.
+configMapGenerator:
+  - name: snip-params
+    namespace: snip
+    envs:
+      - params.env
+
+# Copy DOMAIN from that ConfigMap into the certificate request.
+replacements:
+  - source:
+      kind: ConfigMap
+      name: snip-params
+      fieldPath: data.DOMAIN
+    targets:
+      - select:
+          kind: ManagedCertificate
+          name: snip-cert
+        fieldPaths:
+          - spec.domains.0
+
+images:
+  - name: snip/web
+  - name: snip/links
+  - name: snip/stats

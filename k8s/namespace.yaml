@@ -1,12 +1,14 @@
-# Everything for this project lives in its own namespace.
+# Everything for this project lives in its own namespace. Deleting the
+# namespace is the first step of a teardown: it removes the load balancers
+# before the cluster itself is destroyed.
 apiVersion: v1
 kind: Namespace
 metadata:
   name: snip
 ---
 # Identity for the two services that use Firestore (links and stats).
-# deploy.ps1 grants this account the Firestore role through Workload
-# Identity, so no key file is ever stored in the cluster.
+# Terraform (infra/platform/iam.tf) grants this account the Firestore role
+# through Workload Identity, so no key file is ever stored in the cluster.
 apiVersion: v1
 kind: ServiceAccount
 metadata:

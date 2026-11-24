@@ -36,14 +36,19 @@ spec:
               app: stats
       containers:
         - name: stats
-          image: __REGISTRY__/stats:__TAG__
+          # Placeholder name. The pipeline points it at the image it
+          # just pushed, tagged with the commit (kustomize edit set image).
+          image: snip/stats
           ports:
             - containerPort: 8080
           env:
             - name: STORE_BACKEND
               value: firestore
             - name: GOOGLE_CLOUD_PROJECT
-              value: __PROJECT__
+              valueFrom:
+                configMapKeyRef:
+                  name: snip-params
+                  key: PROJECT_ID
           resources:
             requests:
               cpu: 250m

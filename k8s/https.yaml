@@ -1,4 +1,4 @@
-# HTTPS entry point. Applied by deploy.ps1 only when -Domain is given.
+# HTTPS entry point.
 #
 #   browser --HTTPS--> Google HTTPS load balancer --HTTP--> web pods
 #
@@ -47,7 +47,9 @@ metadata:
   namespace: snip
 spec:
   domains:
-    - __DOMAIN__
+    # Placeholder. Kustomize replaces it with DOMAIN from params.env
+    # (see kustomization.yaml).
+    - snip.example.com
 ---
 # Anyone arriving over plain HTTP is redirected to HTTPS.
 apiVersion: networking.gke.io/v1beta1
@@ -66,6 +68,7 @@ metadata:
   namespace: snip
   annotations:
     kubernetes.io/ingress.class: gce
+    # The address reserved by Terraform (infra/platform/dns.tf).
     kubernetes.io/ingress.global-static-ip-name: snip-ip
     networking.gke.io/managed-certificates: snip-cert
     networking.gke.io/v1beta1.FrontendConfig: snip-frontend
