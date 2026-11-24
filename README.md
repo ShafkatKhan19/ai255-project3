@@ -1,112 +1,84 @@
-# Snip: AI 255 Project 2
+# Snip: AI 255 Project 3, Infrastructure as Code and CI/CD
 
-A link shortener built as three containerized services on Google Kubernetes Engine, with Firestore as the managed datastore.
+The Project 2 system (a link shortener: three services on GKE with Firestore) rebuilt so that nothing is created by hand. Terraform describes the cloud resources, Kubernetes manifests describe the application, and a GitHub Actions pipeline builds, tests and deploys on every commit to `main`. The whole environment can be destroyed and rebuilt from this repository.
 
-Shafkat Khalek Khan. AI 255 Cloud Computing Concepts, Fall 2026. The written report is `docs/REPORT.pdf`.
+Shafkat Khalek Khan. AI 255 Cloud Computing Concepts, Fall 2026. The written report is `docs/REPORT.md`. Project 2 is at https://github.com/ShafkatKhan19/ai255-project2; this repository continues its Git history.
 
-![Architecture](docs/architecture.png)
-
-| Service | What it does | Public? |
-|---|---|---|
-| `web` | Serves the page; gateway to the other two | Yes, through the load balancer |
-| `links` | Creates and looks up short links (Firestore) | No |
-| `stats` | Counts clicks (Firestore) | No |
+![Pipeline](docs/pipeline.png)
 
 ## What is in this repository
 
 ```
-services/web      app.py, static/ (index.html, style.css, app.js), Dockerfile, requirements.txt
-services/links    app.py, store.py, Dockerfile, requirements.txt
-services/stats    app.py, store.py, Dockerfile, requirements.txt
-k8s/              Namespace, service accounts, and per service:
-                  Deployment + Service + HorizontalPodAutoscaler + PodDisruptionBudget;
-                  plus one NetworkPolicy; https/ has the HTTPS load balancer
-scripts/          deploy.ps1, experiments.ps1, evidence.ps1, teardown.ps1,
-                  smoke_test.py, load_test.py, availability.py, build_report.py
-evidence/         output captured from the live cluster (used in the report)
-tests/            unit tests for each service and tests of the three together
-docs/             REPORT.md, architecture diagram
-docker-compose.yml   the whole system on one machine, with the Firestore emulator
+infra/bootstrap/   Terraform, applied once by a person: state bucket, the
+                   pipeline's identity (no key file), APIs
+infra/platform/    Terraform, applied by the pipeline: network, GKE Autopilot
+                   cluster, image repository, Firestore, IAM, address, DNS
+                   tests/plan.tftest.hcl checks the plan with a mock provider
+k8s/               the application, as a Kustomize folder (kubectl apply -k k8s)
+services/          web, links, stats (unchanged from Project 2, except that
+                   web reports the commit it was built from)
+tests/             37 unit and system tests, no cloud needed
+.github/workflows/ checks.yml   everything that needs no cloud access
+                   deploy.yml   checks -> terraform apply -> images -> rollout
+                   destroy.yml  full teardown, then proof nothing is left
+scripts/           bootstrap.ps1, demo.ps1, smoke_test.py, verify_destroyed.sh,
+                   check_manifests.py, wait_ready.py, load_test.py, availability.py
+evidence/          output saved from the real teardown and rebuild
 ```
 
-## Run the tests
+## What happens on a commit
+
+| Stage | What it does | Stops the pipeline if |
+|---|---|---|
+| checks | 37 unit tests; `terraform fmt`, `validate` and `test`; manifests rendered and checked; the three images built and tested together with the Firestore emulator | anything fails |
+| infrastructure | `terraform plan`, then `apply` of exactly that plan | the plan or the apply fails |
+| images | builds `web`, `links`, `stats`, tags them with the commit, pushes them | a build or push fails |
+| rollout | `kubectl apply -k k8s`, waits for ready pods, runs the end-to-end test against the live address and checks the pods run this commit | pods never become ready or the test fails; then it rolls back |
+
+Pull requests run `checks` only. They cannot get cloud credentials.
+
+## Teardown and rebuild
+
+```powershell
+.\scripts\demo.ps1                 # teardown, then rebuild, timed, output in evidence\
+.\scripts\demo.ps1 -Only teardown
+.\scripts\demo.ps1 -Only rebuild
+```
+
+Or from the GitHub Actions page: run **destroy** (type `destroy` to confirm), then run **deploy**.
+
+After a teardown the environment is parked: commits still run the checks but do not rebuild anything until **deploy** is run by hand. A cluster costs money, so it should not come back because of a typo fix.
+
+A teardown deletes the Firestore database and the links in it.
+
+## Setting it up in a new Google Cloud project
+
+Needs Terraform, the gcloud CLI and the gh CLI, all signed in.
+
+```powershell
+gcloud auth application-default login
+.\scripts\bootstrap.ps1 -ProjectId YOUR_PROJECT_ID -DnsZone YOUR_CLOUD_DNS_ZONE -Domain snip.example.com -Repository OWNER/REPO
+git push origin main
+```
+
+`bootstrap.ps1` is the only manual step. It creates the state bucket and the identity the pipeline signs in with, and saves seven non-secret values as repository variables. The repository holds no secrets and no key files.
+
+## Run the checks on your own machine
 
 ```powershell
 py -m venv .venv
 .venv\Scripts\python -m pip install -r requirements-dev.txt
 .venv\Scripts\python -m pytest tests
-```
 
-36 tests. They never touch Google Cloud: most use an in-memory store, and the datastore-outage tests point the real Firestore client at an address where nothing is listening. GitHub Actions runs them on every push (`.github/workflows/tests.yml`).
+terraform -chdir=infra\platform init -backend=false
+terraform -chdir=infra\platform validate
+terraform -chdir=infra\platform test
 
-## Run it locally (needs Docker Desktop)
+kubectl kustomize k8s > rendered.yaml
+py scripts\check_manifests.py rendered.yaml
 
-```powershell
-docker compose up --build
+docker compose up --build -d
 py scripts\smoke_test.py http://localhost:8080
-```
-
-Open http://localhost:8080. Stop one service to see how the others react, for example `docker compose stop stats`.
-
-## Deploy to Google Cloud
-
-You need the gcloud CLI signed in, a project with billing turned on, and kubectl:
-
-```powershell
-gcloud components install kubectl gke-gcloud-auth-plugin
-```
-
-Then one command does the setup, the image builds and the rollout:
-
-```powershell
-.\scripts\deploy.ps1 -ProjectId YOUR_PROJECT_ID
-```
-
-Add `-UseCloudBuild` to build the images in Google Cloud instead of with Docker Desktop. The first run takes about 15 minutes, most of it creating the cluster. At the end it prints the public address. Check it:
-
-```powershell
-py scripts\smoke_test.py http://ADDRESS
-```
-
-### HTTPS
-
-```powershell
-.\scripts\deploy.ps1 -ProjectId YOUR_PROJECT_ID -Domain snip.example.com -DnsZone YOUR_CLOUD_DNS_ZONE
-```
-
-This reserves a fixed address, points the DNS name at it, and adds a Google HTTPS load balancer with a Google-managed certificate in front of the web pods (`k8s/https/ingress.yaml`). Plain HTTP on that name is redirected to HTTPS. The certificate takes 15 to 60 minutes to be issued the first time; `kubectl -n snip get managedcertificate snip-cert` shows `Active` when it is ready.
-
-The web service also sends security headers on every response (a content security policy, no framing, no content sniffing, HSTS over HTTPS), limits each visitor to 10 new links a minute, and rejects oversized requests.
-
-After a code change, `.\scripts\deploy.ps1 -ProjectId YOUR_PROJECT_ID -Step build` and then `-Step apply` roll out a new image tag.
-
-## Experiments
-
-```powershell
-.\scripts\experiments.ps1 -ProjectId YOUR_PROJECT_ID -Address http://ADDRESS
-```
-
-Runs the four experiments from the report (kill a pod, load test, stats down, links down) and saves the output into `evidence\`. About 12 minutes.
-
-## Demo
-
-| Show | Command |
-|---|---|
-| Everything running | `kubectl -n snip get pods,svc,hpa` |
-| Health checks | `kubectl -n snip describe deployment links` (Liveness and Readiness lines) |
-| Self-healing | `py scripts\availability.py http://ADDRESS 60` in one window, `kubectl -n snip delete pod POD_NAME` in another |
-| One request across three services | copy the `X-Request-ID` response header, then `kubectl -n snip logs -l "app in (web,links,stats)" --prefix \| Select-String ID` |
-| Horizontal scaling | `py scripts\load_test.py http://ADDRESS 300 60` in one window, `kubectl -n snip get hpa -w` in another |
-| stats down, links still work | `kubectl -n snip scale deployment stats --replicas=0`; the status dot turns red; restore with `--replicas=2` |
-| links down, clear 503 | `kubectl -n snip scale deployment links --replicas=0`; restore with `--replicas=2` |
-| Save outputs for the report | `.\scripts\evidence.ps1 -ProjectId YOUR_PROJECT_ID -Name under-load` |
-
-## Cost and teardown
-
-About $2.55 a day at the minimum size (see the report, Section 8). To stop the charges:
-
-```powershell
-.\scripts\teardown.ps1 -ProjectId YOUR_PROJECT_ID
 ```
 
 ## AI use

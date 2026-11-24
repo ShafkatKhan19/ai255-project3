@@ -1,0 +1,45 @@
+digraph p3 {
+  rankdir=LR; bgcolor="#fbf5ec"; pad=0.4; nodesep=0.35; ranksep=0.6;
+  fontname="Helvetica"; labelloc=t; fontsize=20; fontcolor="#161616";
+  label="From a commit to the running system";
+  node [shape=box, style="rounded,filled", fillcolor="#ffffff", color="#161616", fontname="Helvetica", fontsize=11, margin="0.16,0.09"];
+  edge [fontname="Helvetica", fontsize=9, color="#161616", fontcolor="#6d655a"];
+
+  dev [label="git push\nto main", fillcolor="#161616", fontcolor="#fbf5ec"];
+
+  subgraph cluster_gha {
+    label="GitHub Actions  (.github/workflows/deploy.yml)"; labelloc=t; fontsize=13; style="rounded,filled"; fillcolor="#f4ead9"; color="#161616";
+    checks [label="1  checks\n37 unit tests\nterraform fmt, validate, plan tests\nmanifest schema + rules\n3 images built and tested together"];
+    infra  [label="2  infrastructure\nterraform plan\nterraform apply", color="#ff5a45", penwidth=2];
+    images [label="3  images\nbuild web, links, stats\ntag = commit\npush"];
+    roll   [label="4  rollout\nkubectl apply -k\nwait for ready pods\ntest the live site\nroll back on failure", color="#ff5a45", penwidth=2];
+    checks -> infra -> images -> roll;
+  }
+
+  subgraph cluster_gcp {
+    label="Google Cloud project"; labelloc=t; fontsize=13; style="rounded,dashed"; color="#6d655a"; fontcolor="#6d655a";
+    wif   [label="Workload Identity Federation\nGitHub token -> snip-deployer\nmain branch of this repo only\nno key file", shape=note, fillcolor="#fff8d6", fontsize=10];
+    state [label="State bucket\n(Terraform state, locked,\nversioned)", shape=cylinder];
+    subgraph cluster_tf {
+      label="Created and destroyed by Terraform (infra/platform)"; labelloc=t; fontsize=12; style="rounded,filled"; fillcolor="#ffe3dd"; color="#ff5a45";
+      net [label="VPC + subnet"];
+      gke [label="GKE Autopilot cluster"];
+      ar  [label="Artifact Registry", shape=folder];
+      fs  [label="Firestore", shape=cylinder];
+      iam [label="IAM: node account,\nFirestore role for snip-data"];
+      dns [label="Reserved address\n+ DNS record"];
+    }
+    subgraph cluster_k8s {
+      label="Created by kubectl from k8s/ (inside the cluster)"; labelloc=t; fontsize=12; style="rounded,filled"; fillcolor="#ffffff"; color="#161616";
+      app [label="web, links, stats\nDeployments, Services, HPAs,\nNetworkPolicy, HTTPS Ingress\n+ certificate"];
+    }
+  }
+
+  dev -> checks;
+  infra -> wif [style=dashed, label="signs in"];
+  infra -> state [label="reads / writes"];
+  infra -> gke [label="creates", color="#ff5a45"];
+  images -> ar [label="pushes"];
+  roll -> app [label="applies", color="#ff5a45"];
+  gke -> app [style=invis];
+}
