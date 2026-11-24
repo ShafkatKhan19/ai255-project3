@@ -1,0 +1,9 @@
+failure
+Is the environment parked?	success	2026-11-24T11:42:20Z	2026-11-24T11:42:42Z
+checks / Unit tests (37, no cloud)	failure	2026-11-24T11:42:20Z	2026-11-24T11:42:47Z
+checks / Kubernetes manifests	success	2026-11-24T11:42:20Z	2026-11-24T11:42:27Z
+checks / Build the images and test them together	success	2026-11-24T11:42:20Z	2026-11-24T11:43:23Z
+checks / Terraform format, validate, plan tests	success	2026-11-24T11:42:20Z	2026-11-24T11:42:33Z
+Image (${{ matrix.service }})	skipped	2026-11-24T11:43:23Z	2026-11-24T11:43:23Z
+Roll out and test the live site	skipped	2026-11-24T11:43:23Z	2026-11-24T11:43:23Z
+Infrastructure (terraform apply)	skipped	2026-11-24T11:43:23Z	2026-11-24T11:43:23Z

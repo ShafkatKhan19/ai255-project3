@@ -1,0 +1,10 @@
+2026-11-24T11:42:43.7858778Z         assert client.get("/clicks?codes=abc1234").json()["clicks"] == {"abc1234": 0}
+2026-11-24T11:42:43.7859654Z             assert client.post("/clicks/abc1234").status_code == 202
+2026-11-24T11:42:43.7860320Z >       assert client.get("/clicks?codes=abc1234,other").json()["clicks"] == {"abc1234": 3, "other": 0}
+2026-11-24T11:42:43.7861022Z E       AssertionError: assert {'abc1234': 6, 'other': 0} == {'abc1234': 3, 'other': 0}
+2026-11-24T11:42:43.7864938Z tests/test_stats.py:15: AssertionError
+2026-11-24T11:42:43.7867165Z         assert created.status_code == 201
+2026-11-24T11:42:43.7867858Z         assert created.json()["short_url"] == f"http://snip.test/r/{code}"
+2026-11-24T11:42:43.7869246Z             assert redirect.status_code == 307
+2026-11-24T11:42:43.7869652Z             assert redirect.headers["location"] == "https://example.com/hello"
+2026-11-24T11:42:43.7870605Z         assert listing["stats_available"] is True

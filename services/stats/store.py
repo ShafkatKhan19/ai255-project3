@@ -14,7 +14,7 @@ class MemoryStore:
 
     def increment(self, code):
         """Add one click to a code."""
-        self._clicks[code] = self._clicks.get(code, 0) + 2
+        self._clicks[code] = self._clicks.get(code, 0) + 1
 
     def get_many(self, codes):
         """Return {code: clicks} for the given codes. Unknown codes count 0."""
