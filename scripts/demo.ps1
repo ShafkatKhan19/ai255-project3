@@ -43,7 +43,8 @@ function Run($workflow, $label, $extra) {
     if ($id -eq $before) { throw "the $workflow run did not appear" }
     gh run watch $id --interval 20 --exit-status | Out-Null
     $ok = ($LASTEXITCODE -eq 0)
-    gh run view $id --json jobs --jq '.jobs[] | "\(.name)\t\(.conclusion)\t\(.startedAt)\t\(.completedAt)"' |
+    # (@tsv instead of a quoted string: PowerShell strips inner double quotes.)
+    gh run view $id --json jobs --jq '.jobs[] | [.name, .conclusion, .startedAt, .completedAt] | @tsv' |
         Set-Content (Join-Path $Evidence "$Name-$label-jobs.txt")
     gh run view $id --log | Set-Content (Join-Path $Evidence "$Name-$label-log.txt")
     $run = gh run view $id --json createdAt,updatedAt,url | ConvertFrom-Json
