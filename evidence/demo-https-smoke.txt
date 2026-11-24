@@ -1,0 +1,15 @@
+[PASS] web liveness /healthz returns 200  (status 200)
+[PASS] web readiness /readyz returns 200  (status 200)
+[PASS] page is served  (status 200)
+[PASS] create a short link (web -> links -> datastore)  (status 201)
+[PASS] invalid address is rejected with 422  (status 422)
+[PASS] short link redirects to the original address (3 clicks)  (status 307)
+[PASS] unknown link returns 404  (status 404)
+[PASS] list shows the new link  (status 200)
+[PASS] stats service is answering
+[PASS] clicks were counted (web -> stats -> datastore)  (counted 3)
+[PASS] status endpoint reports links and stats ready  ({'web': 'ok', 'links': 'ok', 'stats': 'ok', 'pod': 'web-749f958bc8-6tss2'})
+[PASS] responses carry a request ID for tracing  (8b59e5603a47)
+[PASS] web pods answering  (web-749f958bc8-6tss2, web-749f958bc8-7vdgw)
+
+13/13 checks passed

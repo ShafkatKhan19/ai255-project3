@@ -1,0 +1,25 @@
+failure
+Is the environment parked?	success	2026-11-24T11:27:18Z	2026-11-24T11:27:36Z
+checks / Terraform format, validate, plan tests	success	2026-11-24T11:27:18Z	2026-11-24T11:27:32Z
+checks / Kubernetes manifests	success	2026-11-24T11:27:19Z	2026-11-24T11:27:34Z
+checks / Build the images and test them together	success	2026-11-24T11:27:18Z	2026-11-24T11:28:11Z
+checks / Unit tests (37, no cloud)	success	2026-11-24T11:27:18Z	2026-11-24T11:27:50Z
+Infrastructure (terraform apply)	success	2026-11-24T11:28:13Z	2026-11-24T11:28:32Z
+Image (web)	success	2026-11-24T11:28:34Z	2026-11-24T11:29:12Z
+Image (stats)	success	2026-11-24T11:28:34Z	2026-11-24T11:29:22Z
+Image (links)	success	2026-11-24T11:28:35Z	2026-11-24T11:29:19Z
+Roll out and test the live site	failure	2026-11-24T11:29:24Z	2026-11-24T11:39:46Z
+Set up job	success	2026-11-24T11:29:25Z	2026-11-24T11:29:27Z
+Run actions/checkout@v4	success	2026-11-24T11:29:27Z	2026-11-24T11:29:28Z
+Run google-github-actions/auth@v2	success	2026-11-24T11:29:28Z	2026-11-24T11:29:29Z
+Run google-github-actions/get-gke-credentials@v2	success	2026-11-24T11:29:29Z	2026-11-24T11:29:30Z
+Fill in the project, the domain and this commit's images	success	2026-11-24T11:29:30Z	2026-11-24T11:29:31Z
+Apply	success	2026-11-24T11:29:31Z	2026-11-24T11:29:44Z
+Wait for the new pods to be ready	failure	2026-11-24T11:29:44Z	2026-11-24T11:39:39Z
+Wait for the load balancer address	skipped	2026-11-24T11:39:39Z	2026-11-24T11:39:39Z
+Test the live site (and that it runs this commit)	skipped	2026-11-24T11:39:39Z	2026-11-24T11:39:39Z
+Roll back if the rollout or the live test failed	success	2026-11-24T11:39:39Z	2026-11-24T11:39:42Z
+Summary	success	2026-11-24T11:39:42Z	2026-11-24T11:39:43Z
+Post Run google-github-actions/auth@v2	success	2026-11-24T11:39:43Z	2026-11-24T11:39:43Z
+Post Run actions/checkout@v4	success	2026-11-24T11:39:43Z	2026-11-24T11:39:43Z
+Complete job	success	2026-11-24T11:39:43Z	2026-11-24T11:39:43Z
