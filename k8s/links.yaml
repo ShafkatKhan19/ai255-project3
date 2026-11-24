@@ -70,7 +70,7 @@ spec:
           # pod stays running but is taken out of the Service until it can.
           readinessProbe:
             httpGet:
-              path: /readyzz
+              path: /readyz
               port: 8080
             periodSeconds: 20
             timeoutSeconds: 5

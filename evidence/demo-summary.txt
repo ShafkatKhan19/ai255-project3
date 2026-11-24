@@ -3,5 +3,3 @@
 06:04:00  rebuild started
 06:20:28  rebuild finished: success in 16 minutes  https://github.com/ShafkatKhan19/ai255-project3/actions/runs/45380694260
 06:20:29  waiting for the certificate: testing https://snip.cloud.gadgetgroveny.com every minute
-06:23:14  waiting for the certificate: testing https://snip.cloud.gadgetgroveny.com every minute
-06:25:19  HTTPS passed every check 2.1 minutes after the pipeline finished
