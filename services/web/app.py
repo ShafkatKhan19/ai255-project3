@@ -38,6 +38,10 @@ log = logging.getLogger("web")
 LINKS_URL = os.environ.get("LINKS_URL", "http://links:8080")
 STATS_URL = os.environ.get("STATS_URL", "http://stats:8080")
 
+# The Git commit this image was built from. The pipeline sets it when it
+# builds the image, so /api/whoami shows which commit is serving.
+VERSION = os.environ.get("VERSION", "dev")
+
 # links is needed to answer, so it gets a longer wait. stats is optional,
 # so it gets a short one and the page never waits long for it.
 LINKS_TIMEOUT = 4.0
@@ -194,7 +198,7 @@ async def readyz():
 
 @app.get("/api/whoami")
 async def whoami():
-    return {"pod": POD}
+    return {"pod": POD, "version": VERSION}
 
 
 @app.get("/")

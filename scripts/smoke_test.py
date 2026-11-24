@@ -1,6 +1,9 @@
 """End-to-end check of a running Snip deployment.
 
-Usage:  python scripts/smoke_test.py http://ADDRESS
+Usage:  python scripts/smoke_test.py http://ADDRESS [EXPECTED_VERSION]
+
+With EXPECTED_VERSION (a Git commit), it also checks that every web pod
+that answers is running the image built from that commit.
 
 Works against the local docker compose stack (http://localhost:8080) and
 against the live load balancer address. Uses only the standard library.
@@ -36,10 +39,11 @@ def request(base, method, path, body=None):
 
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) not in (2, 3):
         print(__doc__)
         return 2
     base = sys.argv[1].rstrip("/")
+    expected_version = sys.argv[2] if len(sys.argv) == 3 else None
     results = []
 
     def check(name, passed, detail=""):
@@ -102,11 +106,17 @@ def main():
     check("responses carry a request ID for tracing", len(request_id) == 12, request_id)
 
     pods = set()
+    versions = set()
     for _ in range(20):
         status, headers, body = request(base, "GET", "/api/whoami")
         if status == 200:
-            pods.add(json.loads(body)["pod"])
+            answer = json.loads(body)
+            pods.add(answer["pod"])
+            versions.add(answer.get("version", "?"))
     check("web pods answering", len(pods) >= 1, ", ".join(sorted(pods)))
+    if expected_version:
+        check("every pod runs the expected commit", versions == {expected_version},
+              ", ".join(sorted(versions)))
 
     passed = sum(results)
     print(f"\n{passed}/{len(results)} checks passed")

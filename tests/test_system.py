@@ -282,3 +282,10 @@ def test_oversized_and_malformed_bodies_are_rejected():
     assert big.status_code == 413
     bad = asyncio.run(system.browser.post("/api/links", content=b"not json"))
     assert bad.status_code == 400
+
+
+def test_whoami_reports_the_build_version():
+    system = System()
+    # The pipeline bakes the commit into the image as VERSION. Outside the
+    # pipeline it is "dev".
+    assert system.get("/api/whoami").json()["version"] == "dev"
