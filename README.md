@@ -2,9 +2,21 @@
 
 The Project 2 system (a link shortener: three services on GKE with Firestore) rebuilt so that nothing is created by hand. Terraform describes the cloud resources, Kubernetes manifests describe the application, and a GitHub Actions pipeline builds, tests and deploys on every commit to `main`. The whole environment can be destroyed and rebuilt from this repository.
 
-Shafkat Khalek Khan. AI 255 Cloud Computing Concepts, Fall 2026. The written report is `docs/REPORT.md`. Project 2 is at https://github.com/ShafkatKhan19/ai255-project2; this repository continues its Git history.
+Shafkat Khalek Khan. AI 255 Cloud Computing Concepts, Fall 2026. The written report is `docs/REPORT.pdf` (source: `docs/REPORT.md`). Live at https://snip.cloud.gadgetgroveny.com. Project 2 is at https://github.com/ShafkatKhan19/ai255-project2; this repository continues its Git history.
 
 ![Pipeline](docs/pipeline.png)
+
+## Measured on 24 Nov 2026
+
+| | Result |
+|---|---|
+| Commit pushed to live | 3 min 32 s |
+| Full teardown | 11 min 24 s, 21 of 21 resource checks report "gone" |
+| Full rebuild from nothing | 14 min 42 s, HTTPS passing 3 minutes later |
+| Code bug put in on purpose | stopped by the unit tests in 27 s, nothing deployed |
+| Deployment bug that passes every check | rolled back; 3,929 of 3,929 requests answered during it |
+
+Details and what went wrong along the way are in the report. Raw output is in `evidence/`.
 
 ## What is in this repository
 
