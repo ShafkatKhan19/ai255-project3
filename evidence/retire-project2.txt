@@ -1,0 +1,53 @@
+Run on my PC, started retire started 2026-11-24T05:24:17.9259214-05:00, finished 2026-11-24 05:33 (about 9 minutes).
+
+
+== Application and load balancers (delete the namespace first)
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for snip.
+namespace "snip" deleted
+
+== Cluster
+Deleting cluster snip...
+...done.
+Deleted [https://container.googleapis.com/v1/projects/ai255-p1-shafkat/zones/us-central1/clusters/snip].
+
+== DNS record and reserved address
+Deleted [https://dns.googleapis.com/dns/v1/projects/ai255-p1-shafkat/managedZones/web-zone/rrsets/snip.cloud.gadgetgroveny.com./A].
+Deleted [https://www.googleapis.com/compute/v1/projects/ai255-p1-shafkat/global/addresses/snip-ip].
+
+== Image repository
+Delete request issued for: [snip]
+Waiting for operation [projects/ai255-p1-shafkat/locations/us-central1/operations/45e8798e-4a68-4b69-bf22-f4ae0f6341df] to complete...
+......done.
+Deleted repository [snip].
+
+== Firestore database
+metadata:
+  '@type': type.googleapis.com/google.firestore.admin.v1.DeleteDatabaseMetadata
+name: projects/ai255-p1-shafkat/databases/(default)/operations/I9n5kBAG2JXSiwgLGgcQA6vA8bgQBtfl4rgIDAodGg
+response:
+  '@type': type.googleapis.com/google.firestore.admin.v1.Database
+  appEngineIntegrationMode: DISABLED
+  concurrencyMode: PESSIMISTIC
+  createTime: '2026-11-15T08:45:44.896547Z'
+  databaseEdition: STANDARD
+  deleteProtectionState: DELETE_PROTECTION_DISABLED
+  deleteTime: '2026-11-24T10:33:03.074874Z'
+  earliestVersionTime: '2026-11-24T09:33:03.097061Z'
+  etag: IJrMz+GzoJgDMLq0zuGzoJgD
+  freeTier: false
+  locationId: nam5
+  name: projects/ai255-p1-shafkat/databases/592314c4-60f4-4ba3-8186-44946c90732f
+  pointInTimeRecoveryEnablement: POINT_IN_TIME_RECOVERY_DISABLED
+  previousId: (default)
+  realtimeUpdatesMode: REALTIME_UPDATES_MODE_ENABLED
+  type: FIRESTORE_NATIVE
+  uid: 592314c4-60f4-4ba3-8186-44946c90732f
+  updateTime: '2026-11-15T08:45:44.896547Z'
+  versionRetentionPeriod: 3600s
+
+== IAM binding for the data services
+Updated IAM policy for project [ai255-p1-shafkat].
+BwZhAzx46yE=
+
+Done. Check with: bash scripts/verify_destroyed.sh ai255-p1-shafkat web-zone snip.cloud.gadgetgroveny.com
