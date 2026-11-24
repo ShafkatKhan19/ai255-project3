@@ -16,8 +16,11 @@ found=0
 check() {
   local what="$1"; shift
   local out
-  if ! out=$("$@" 2>&1); then
-    echo "ERROR  $what: $out"
+  # Only what the command prints as its result counts. gcloud also writes
+  # warnings ("filter keys were not present in any resource" when a list is
+  # empty), and those must not be mistaken for a leftover resource.
+  if ! out=$("$@" 2>"$errors"); then
+    echo "ERROR  $what: $(tr '\n' ' ' < "$errors")"
     found=1
   elif [ -n "$out" ]; then
     echo "LEFT   $what: $(echo "$out" | tr '\n' ' ')"
@@ -26,6 +29,7 @@ check() {
     echo "gone   $what"
   fi
 }
+errors=$(mktemp)
 
 g() { gcloud --project "$project" "$@"; }
 # Project 1 is one VM with its own address: it has no load balancer, so

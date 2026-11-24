@@ -5,6 +5,7 @@ pipeline, timed, with the output saved in evidence\.
   .\scripts\demo.ps1                    teardown, then rebuild
   .\scripts\demo.ps1 -Only teardown     just the teardown
   .\scripts\demo.ps1 -Only rebuild      just the rebuild
+  .\scripts\demo.ps1 -Only https        just wait for HTTPS and test it
 
 Nothing here touches Google Cloud directly. It starts the two GitHub
 workflows (destroy, then deploy), waits for them, and then keeps testing
@@ -12,7 +13,7 @@ https://DOMAIN until the new certificate is issued.
 Needs the gh CLI signed in. Run it from the repository folder.
 #>
 param(
-    [ValidateSet("both", "teardown", "rebuild")][string]$Only = "both",
+    [ValidateSet("both", "teardown", "rebuild", "https")][string]$Only = "both",
     [string]$Name = (Get-Date -Format "yyyyMMdd-HHmm"),
     [int]$HttpsMinutes = 90
 )
@@ -53,18 +54,21 @@ function Run($workflow, $label, $extra) {
     if (-not $ok) { throw "$label failed; see $($run.url)" }
 }
 
-if ($Only -ne "rebuild") {
+if ($Only -eq "both" -or $Only -eq "teardown") {
     Run "destroy.yml" "teardown" @("-f", "confirm=destroy")
 }
 if ($Only -ne "teardown") {
-    Run "deploy.yml" "rebuild" @()
+    if ($Only -ne "https") { Run "deploy.yml" "rebuild" @() }
 
     $domain = (gh variable get DOMAIN)
     Note "waiting for the certificate: testing https://$domain every minute"
     $started = Get-Date
     $passed = $false
     while (((Get-Date) - $started).TotalMinutes -lt $HttpsMinutes) {
-        py (Join-Path $PSScriptRoot "smoke_test.py") "https://$domain" 2>&1 |
+        # Through cmd so that anything the test writes to stderr is saved
+        # with the rest and does not stop this script.
+        $smoke = Join-Path $PSScriptRoot "smoke_test.py"
+        cmd /c "py `"$smoke`" https://$domain 2>&1" |
             Set-Content (Join-Path $Evidence "$Name-https-smoke.txt")
         if ($LASTEXITCODE -eq 0) { $passed = $true; break }
         Start-Sleep -Seconds 60

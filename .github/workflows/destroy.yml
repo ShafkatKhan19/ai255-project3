@@ -72,4 +72,8 @@ jobs:
           terraform destroy -input=false -auto-approve
 
       - name: Prove nothing is left
-        run: bash scripts/verify_destroyed.sh "${{ vars.GCP_PROJECT_ID }}" "${{ vars.DNS_ZONE }}" "${{ vars.DOMAIN }}" | tee -a "$GITHUB_STEP_SUMMARY"
+        run: |
+          # pipefail: without it the step takes tee's exit code and would
+          # pass even when the script found something.
+          set -o pipefail
+          bash scripts/verify_destroyed.sh "${{ vars.GCP_PROJECT_ID }}" "${{ vars.DNS_ZONE }}" "${{ vars.DOMAIN }}" | tee -a "$GITHUB_STEP_SUMMARY"

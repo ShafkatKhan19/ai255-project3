@@ -36,6 +36,12 @@ def request(base, method, path, body=None):
             return response.status, dict(response.headers), response.read()
     except urllib.error.HTTPError as error:
         return error.code, dict(error.headers), error.read()
+    except OSError as error:
+        # No answer at all: nothing listening yet, or (straight after a
+        # rebuild) the HTTPS certificate has not been issued. Report it as
+        # a failed check instead of crashing.
+        print(f"       no answer from {base + path}: {error}")
+        return 0, {}, b""
 
 
 def main():
