@@ -1,0 +1,88 @@
+# Everything that can be checked without touching Google Cloud.
+#
+# Runs on every pull request, and as the first stage of deploy.yml. A pull
+# request cannot get cloud credentials (see infra/bootstrap/main.tf), so
+# nothing in this file needs any.
+name: checks
+
+on:
+  pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  unit-tests:
+    name: Unit tests (37, no cloud)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: pip install -r requirements-dev.txt
+      - run: python -m pytest tests
+
+  terraform:
+    name: Terraform format, validate, plan tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.16.6"
+          terraform_wrapper: false
+      - name: Formatting
+        run: terraform fmt -check -recursive -diff infra
+      - name: Validate bootstrap
+        working-directory: infra/bootstrap
+        run: |
+          terraform init -backend=false -input=false
+          terraform validate
+      - name: Validate platform
+        working-directory: infra/platform
+        run: |
+          terraform init -backend=false -input=false
+          terraform validate
+      - name: Plan tests (mock provider, creates nothing)
+        working-directory: infra/platform
+        run: terraform test
+
+  manifests:
+    name: Kubernetes manifests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Render with Kustomize
+        run: kubectl kustomize k8s > rendered.yaml
+      - name: Check against the Kubernetes schemas
+        run: |
+          curl -sSL https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz | tar xz kubeconform
+          # The three GKE-only kinds (ManagedCertificate, BackendConfig,
+          # FrontendConfig) have no public schema and are skipped.
+          ./kubeconform -strict -ignore-missing-schemas -summary rendered.yaml
+      - name: Every container has both probes, limits and a non-root user
+        run: python scripts/check_manifests.py rendered.yaml
+
+  containers:
+    name: Build the images and test them together
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the three images
+        run: docker compose build
+      - name: Start the system (with the Firestore emulator)
+        run: docker compose up -d
+      - name: Wait until links and stats can reach the datastore
+        run: python scripts/wait_ready.py http://localhost:8080 240
+      - name: End-to-end test against the running containers
+        run: python scripts/smoke_test.py http://localhost:8080
+      - name: Logs, if anything failed
+        if: failure()
+        run: docker compose logs --tail=80
+      - name: Stop
+        if: always()
+        run: docker compose down -v

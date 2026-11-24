@@ -1,0 +1,75 @@
+# Teardown. Removes the whole environment: application, load balancers,
+# cluster, network, image repository, Firestore database, address, DNS
+# record and IAM bindings. Only the bootstrap (state bucket and the
+# pipeline's own identity) is left.
+#
+# Started by hand only, and only if "destroy" is typed in the box.
+# Rebuild afterwards with: Actions -> deploy -> Run workflow.
+name: destroy
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "destroy" to delete the whole environment, including the data'
+        required: true
+
+concurrency:
+  group: environment
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  TF_VAR_project_id: ${{ vars.GCP_PROJECT_ID }}
+  TF_VAR_region: ${{ vars.GCP_REGION }}
+  TF_VAR_dns_zone: ${{ vars.DNS_ZONE }}
+  TF_VAR_domain: ${{ vars.DOMAIN }}
+  TF_IN_AUTOMATION: "true"
+
+jobs:
+  destroy:
+    name: Tear everything down
+    if: inputs.confirm == 'destroy'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
+          service_account: ${{ vars.DEPLOYER_SA }}
+      - uses: google-github-actions/setup-gcloud@v2
+        with:
+          install_components: gke-gcloud-auth-plugin
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.16.6"
+          terraform_wrapper: false
+
+      - name: Park the environment (commits will not rebuild it)
+        run: echo "torn down by run ${{ github.run_id }}" | gcloud storage cp - "gs://${{ vars.TF_STATE_BUCKET }}/parked"
+
+      # Order matters. The load balancers were created by GKE on behalf of
+      # the Service and the Ingress, so Terraform does not know about them.
+      # Deleting the namespace makes GKE remove them. If the cluster were
+      # destroyed first they would be left behind, still billed, and the
+      # network could not be deleted.
+      - name: Delete the application (removes the load balancers)
+        run: |
+          if [ -n "$(gcloud container clusters list --filter='name=snip' --format='value(name)')" ]; then
+            gcloud container clusters get-credentials snip --region "${{ vars.GCP_REGION }}"
+            kubectl delete namespace snip --ignore-not-found --timeout=900s
+          else
+            echo "no cluster; nothing to delete"
+          fi
+
+      - name: Destroy the infrastructure (terraform destroy)
+        working-directory: infra/platform
+        run: |
+          terraform init -input=false -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
+          terraform destroy -input=false -auto-approve
+
+      - name: Prove nothing is left
+        run: bash scripts/verify_destroyed.sh "${{ vars.GCP_PROJECT_ID }}" "${{ vars.DNS_ZONE }}" "${{ vars.DOMAIN }}" | tee -a "$GITHUB_STEP_SUMMARY"

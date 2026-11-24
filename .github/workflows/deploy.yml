@@ -1,0 +1,205 @@
+# The pipeline. On every commit to main:
+#
+#   checks  ->  infrastructure  ->  images  ->  rollout
+#
+#   checks          unit tests, Terraform checks, manifest checks, and the
+#                   three images built and tested together (checks.yml)
+#   infrastructure  terraform apply: network, cluster, registry, Firestore,
+#                   IAM, address, DNS. Changes nothing if nothing changed.
+#   images          build the three images, tag them with the commit, push
+#   rollout         kubectl apply, wait for the pods, test the live site,
+#                   and roll back if that test fails
+#
+# Run by hand (Actions -> deploy -> Run workflow) it does the same thing.
+# That is how the environment is rebuilt after a teardown.
+name: deploy
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+      - "evidence/**"
+  workflow_dispatch:
+
+# One run at a time, and never cancel a run half way through an apply.
+concurrency:
+  group: environment
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write # lets the job ask GitHub for the token Google checks
+
+env:
+  TF_VAR_project_id: ${{ vars.GCP_PROJECT_ID }}
+  TF_VAR_region: ${{ vars.GCP_REGION }}
+  TF_VAR_dns_zone: ${{ vars.DNS_ZONE }}
+  TF_VAR_domain: ${{ vars.DOMAIN }}
+  TF_IN_AUTOMATION: "true"
+
+jobs:
+  checks:
+    uses: ./.github/workflows/checks.yml
+
+  # After a teardown the environment stays down until someone asks for it
+  # back. Without this, a one-line commit would quietly rebuild a cluster
+  # that costs money. destroy.yml leaves a marker in the state bucket; a
+  # manual run of this workflow removes it.
+  gate:
+    name: Is the environment parked?
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.decide.outputs.go }}
+    steps:
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
+          service_account: ${{ vars.DEPLOYER_SA }}
+      - uses: google-github-actions/setup-gcloud@v2
+      - id: decide
+        run: |
+          marker="gs://${{ vars.TF_STATE_BUCKET }}/parked"
+          if gcloud storage ls "$marker" >/dev/null 2>&1; then
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              gcloud storage rm "$marker"
+              echo "Parked, but this run was started by hand: rebuilding." | tee -a "$GITHUB_STEP_SUMMARY"
+              echo "go=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "The environment was torn down and is parked. Checks ran; nothing was deployed. Run this workflow by hand to rebuild." | tee -a "$GITHUB_STEP_SUMMARY"
+              echo "go=false" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  infrastructure:
+    name: Infrastructure (terraform apply)
+    needs: [checks, gate]
+    if: needs.gate.outputs.go == 'true'
+    runs-on: ubuntu-latest
+    outputs:
+      registry: ${{ steps.out.outputs.registry }}
+      cluster_name: ${{ steps.out.outputs.cluster_name }}
+      cluster_location: ${{ steps.out.outputs.cluster_location }}
+    defaults:
+      run:
+        working-directory: infra/platform
+    steps:
+      - uses: actions/checkout@v4
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
+          service_account: ${{ vars.DEPLOYER_SA }}
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.16.6"
+          terraform_wrapper: false
+      - run: terraform init -input=false -backend-config="bucket=${{ vars.TF_STATE_BUCKET }}"
+      - name: Plan
+        run: terraform plan -input=false -out=tfplan
+      - name: Apply exactly that plan
+        run: terraform apply -input=false tfplan
+      - id: out
+        run: |
+          echo "registry=$(terraform output -raw registry)" >> "$GITHUB_OUTPUT"
+          echo "cluster_name=$(terraform output -raw cluster_name)" >> "$GITHUB_OUTPUT"
+          echo "cluster_location=$(terraform output -raw cluster_location)" >> "$GITHUB_OUTPUT"
+
+  images:
+    name: Image (${{ matrix.service }})
+    needs: infrastructure
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [web, links, stats]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
+          service_account: ${{ vars.DEPLOYER_SA }}
+      - uses: google-github-actions/setup-gcloud@v2
+      - name: Build and push, tagged with the commit
+        env:
+          IMAGE: ${{ needs.infrastructure.outputs.registry }}/${{ matrix.service }}:${{ github.sha }}
+        run: |
+          gcloud auth configure-docker "${{ vars.GCP_REGION }}-docker.pkg.dev" --quiet
+          docker build --build-arg VERSION="${{ github.sha }}" -t "$IMAGE" "services/${{ matrix.service }}"
+          docker push "$IMAGE"
+
+  rollout:
+    name: Roll out and test the live site
+    needs: [infrastructure, images]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
+          service_account: ${{ vars.DEPLOYER_SA }}
+      - uses: google-github-actions/get-gke-credentials@v2
+        with:
+          cluster_name: ${{ needs.infrastructure.outputs.cluster_name }}
+          location: ${{ needs.infrastructure.outputs.cluster_location }}
+      - name: Fill in the project, the domain and this commit's images
+        working-directory: k8s
+        env:
+          REGISTRY: ${{ needs.infrastructure.outputs.registry }}
+        run: |
+          printf 'PROJECT_ID=%s\nDOMAIN=%s\n' "${{ vars.GCP_PROJECT_ID }}" "${{ vars.DOMAIN }}" > params.env
+          for service in web links stats; do
+            kustomize edit set image "snip/$service=$REGISTRY/$service:${{ github.sha }}"
+          done
+      - name: Apply
+        run: kubectl apply -k k8s
+      - name: Wait for the new pods to be ready
+        run: |
+          for service in links stats web; do
+            kubectl -n snip rollout status "deployment/$service" --timeout=900s
+          done
+      - name: Wait for the load balancer address
+        id: address
+        run: |
+          for i in $(seq 1 120); do
+            ip=$(kubectl -n snip get service web -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+            [ -n "$ip" ] && break
+            sleep 5
+          done
+          [ -n "$ip" ] || { echo "no address after 10 minutes"; exit 1; }
+          echo "ip=$ip" >> "$GITHUB_OUTPUT"
+      - name: Test the live site (and that it runs this commit)
+        run: |
+          # A new load balancer needs a little while before it passes
+          # traffic, so the test gets several tries.
+          for attempt in $(seq 1 12); do
+            if python3 scripts/smoke_test.py "http://${{ steps.address.outputs.ip }}" "${{ github.sha }}"; then
+              exit 0
+            fi
+            echo "attempt $attempt failed; trying again in 15 seconds"
+            sleep 15
+          done
+          exit 1
+      - name: Roll back if the rollout or the live test failed
+        if: failure()
+        run: |
+          for service in web links stats; do
+            kubectl -n snip rollout undo "deployment/$service" || true
+          done
+          kubectl -n snip get pods -o wide || true
+          kubectl -n snip get events --sort-by=.lastTimestamp | tail -30 || true
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Deployed ${{ github.sha }}"
+            echo ""
+            echo "- HTTP (ready now): http://${{ steps.address.outputs.ip }}"
+            echo "- HTTPS: https://${{ vars.DOMAIN }} (after a rebuild the certificate takes 15 to 60 minutes)"
+            echo ""
+            echo '```'
+            kubectl -n snip get deployments,hpa 2>&1 || true
+            kubectl -n snip get managedcertificate 2>&1 || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
